@@ -1,5 +1,13 @@
 
 <html>
+<head>
+    <style>
+       #map {
+        height: 600px;
+        width: 100%;
+       }
+    </style>
+  </head>
 <body>
 
 <center>Hi there....I am just a mail away :) <br> <br>
@@ -14,7 +22,24 @@ Ahmedabad (A) : +91 9724445808 <br>
 <del>Bangalore (B) : +919632544221 </del><br>
 Manchester (M) : +44 7397007725 or +44 7843964788 <br>
 
-<img src="https://maps.googleapis.com/maps/api/staticmap?size=600x400&maptype=roadmap &key=AIzaSyD7SIfSPdvdlwEo3pGxthLqI9QOtkBME_8&scale=1&markers=color:red|label:M|53.41063159999999,-2.1575332&scale=1&markers=color:blue|label:B|12.9279232,77.62710779999999&markers=color:blue|label:A|23.0497364,72.5117241&markers=color:blue|label:M|19,73">
+<div id="map"></div>
+    <script>
+      function initMap() {
+       
+        var map;
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {
+          "lat": 38.963745,
+          "lng": 35.243322
+        }
+        });
+        map.data.loadGeoJson('https://raw.githubusercontent.com/Saheb/saheb.github.com/master/placedLived.json');
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7SIfSPdvdlwEo3pGxthLqI9QOtkBME_8&callback=initMap">
+    </script>
 </center>
 </body>
 </html>
