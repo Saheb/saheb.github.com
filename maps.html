@@ -1,34 +1,23 @@
-
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
        #map {
         height: 600px;
-        width: 100%;
+        width: 600%;
        }
     </style>
   </head>
-<body>
-
-<center>Hi there ...  <br> <br>
-  I am just a mail away <br> <br>
-
-Email : saheb210692@gmail.com <br><br>
-
-Contact Numbers: <br>
-Ahemdabad (A) : +91 9558003669 <br>
-<del>Ahemdabad (A) : +91 9724445808 </del><br>
-<del>Mumbai (M) : 	+91 9167650063 </del> <br>
-<del>Bangalore (B) : +91 9632544221 </del><br>
-Manchester (M) : +44 7397007725 <br>
-
-<div id="map"></div>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
     <script>
       function initMap() {
+        //var uluru = {lat: -25.363, lng: 131.044};
        
         var map;
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
+          zoom: 1,
           center: {
           "lat": 38.963745,
           "lng": 35.243322
@@ -40,6 +29,5 @@ Manchester (M) : +44 7397007725 <br>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7SIfSPdvdlwEo3pGxthLqI9QOtkBME_8&callback=initMap">
     </script>
-</center>
-</body>
+  </body>
 </html>
