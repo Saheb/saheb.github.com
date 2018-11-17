@@ -4,12 +4,12 @@
     <style>
        #map {
         height: 600px;
-        width: 600%;
+        width: 100%;
        }
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h3>My travel map</h3>
     <div id="map"></div>
     <script>
       function initMap() {
@@ -17,13 +17,13 @@
        
         var map;
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 1,
+          zoom: 3,
           center: {
           "lat": 38.963745,
           "lng": 35.243322
         }
         });
-        map.data.loadGeoJson('https://raw.githubusercontent.com/Saheb/saheb.github.com/master/placedLived.json');
+        map.data.loadGeoJson('https://raw.githubusercontent.com/Saheb/saheb.github.com/master/placedTravelledMap.json');
       }
     </script>
     <script async defer
