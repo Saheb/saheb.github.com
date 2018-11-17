@@ -8,6 +8,70 @@
 				"type" : "Point",
 				"coordinates":[-74.000087,40.710399]
 			}	
-		}
+		},
+		{
+			"type":"Feature",
+			"geometry":
+			{
+				"type" : "Point",
+				"coordinates":[4.375433886663092,50.83853395]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[88.45413638680145,27.601029]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[2.1774322,41.3828939]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[-9.1365919,38.7077507]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[4.8936041,52.3727598]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[8.0547274,49.9752749]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[8.5423216,47.3723957]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[7.7494002,46.0222273]
+			}
+		}			
 	]	
 }
