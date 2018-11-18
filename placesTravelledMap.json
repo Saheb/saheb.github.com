@@ -120,6 +120,78 @@
 				"type" : "Point",
 				"coordinates":[7.7494002,46.0222273]
 			}
-		}			
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[73.742,15.587]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[73.756,15.555]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[73.768,15.514]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[73.272,17.149]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[77.490,10.237]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[79.814,11.941]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[74.618,15.249]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[77.189,33.239]
+			}
+		},
+		{
+			"type":"Feature",
+			"geometry": 
+			{
+				"type" : "Point",
+				"coordinates":[72.716,24.593]
+			}
+		}
 	]	
 }
