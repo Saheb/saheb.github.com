@@ -6,9 +6,56 @@ title: 100 dreams
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<title>100 dreams</title>
 	<link rel="icon" type="image/png" href="/saheb-circle.png">
 </head>
+
+<!-- Background music - Ek Zindagi -->
+<style>
+	.music-container {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.music-player {
+		width: 300px;
+		height: 200px;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		display: none;
+	}
+
+	.music-player.show {
+		display: block;
+	}
+
+	.music-btn {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		border: none;
+		border-radius: 50px;
+		padding: 12px 20px;
+		color: white;
+		font-size: 14px;
+		cursor: pointer;
+		box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+		transition: all 0.3s ease;
+		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	}
+
+	.music-btn:hover {
+		transform: scale(1.05);
+		box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+	}
+
+	.music-btn.playing {
+		background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+	}
+</style>
 
 <body>
 	Hundred Dreams
@@ -52,6 +99,63 @@ title: 100 dreams
 		<li> Play a guitar fingerpicking song
 		<li> Play a piano song
 		<li> ...
+	</ul>
+
+	<div class="music-container">
+		<div class="music-player" id="musicPlayer">
+			<div id="ytPlayer"></div>
+		</div>
+		<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Music</button>
+	</div>
+
+	<!-- YouTube IFrame Player API -->
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script>
+		let player;
+		let isPlaying = false;
+		let playerReady = false;
+
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('ytPlayer', {
+				height: '200',
+				width: '300',
+				videoId: '05DrDxjMEbU',
+				playerVars: {
+					'autoplay': 0,
+					'loop': 1,
+					'playlist': '05DrDxjMEbU',
+					'start': 57
+				},
+				events: {
+					'onReady': onPlayerReady
+				}
+			});
+		}
+
+		function onPlayerReady(event) {
+			playerReady = true;
+		}
+
+		function toggleMusic() {
+			const btn = document.getElementById('musicBtn');
+			const playerDiv = document.getElementById('musicPlayer');
+
+			if (!playerReady) return;
+
+			if (!isPlaying) {
+				player.playVideo();
+				playerDiv.classList.add('show');
+				btn.textContent = '🎵 Pause';
+				btn.classList.add('playing');
+				isPlaying = true;
+			} else {
+				player.pauseVideo();
+				btn.textContent = '🎵 Play';
+				btn.classList.remove('playing');
+				isPlaying = false;
+			}
+		}
+	</script>
 </body>
 
 </html>
