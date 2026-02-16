@@ -11,18 +11,26 @@ title: Home
     <title>Saheb's projects</title>
     <link rel="icon" type="image/png" href="/saheb-circle.png">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Specific override for centering */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container text-center" style="margin-top: 20vh;">
+    <div class="container project-list">
         <p>
             <a href="https://saheb.github.io/rl-snake/"> rl-snake </a> <br>
             <span>applying reinforcement learning to the game of snake</span>
         </p>
         <br />
-        <p>
-            <a href="/college_projects"> Ancient / College Projects (before 2014) </a>
-        </p>
+        <a href="/college_projects"> Ancient / College Projects (before 2014) </a>
     </div>
 </body>
 

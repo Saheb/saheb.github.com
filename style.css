@@ -136,16 +136,15 @@ p {
 
 /* Project Grid for college_projects.html */
 .project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 10px;
+    justify-items: center;
 }
 
 .project-item {
-    flex: 1 1 300px;
-    /* Grow, shrink, base width */
+    width: 100%;
     max-width: 500px;
     text-align: center;
     margin-bottom: 20px;
