@@ -14,12 +14,9 @@ title: Travel Map
   <style>
     .map-container {
       position: relative;
-      padding-bottom: 75%;
-      /* Aspect ratio or height control */
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      background: #f0f0f0;
+      width: 100%;
+      height: 85vh;
+      /* Take up most of the screen height on all devices */
     }
 
     .map-container iframe {
@@ -29,14 +26,6 @@ title: Travel Map
       width: 100%;
       height: 100%;
       border: 0;
-    }
-
-    /* On larger screens, we might want a fixed height */
-    @media (min-width: 768px) {
-      .map-container {
-        padding-bottom: 0;
-        height: 80vh;
-      }
     }
   </style>
 </head>
