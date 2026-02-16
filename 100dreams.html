@@ -7,107 +7,121 @@ title: 100 dreams
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>100 dreams</title>
 	<link rel="icon" type="image/png" href="/saheb-circle.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		/* Specific styles for this page */
+		.dream-list {
+			text-align: left;
+			display: inline-block;
+		}
+
+		/* Music Player Styles */
+		.music-container {
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* Centered for mobile */
+			gap: 10px;
+			width: 100%;
+		}
+
+		.music-player {
+			width: 300px;
+			height: 200px;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+			display: none;
+			max-width: 100%;
+			/* Responsive width */
+		}
+
+		.music-player.show {
+			display: block;
+		}
+
+		.music-btn {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border: none;
+			border-radius: 50px;
+			padding: 12px 20px;
+			color: white;
+			font-size: 14px;
+			cursor: pointer;
+			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+			transition: all 0.3s ease;
+			font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+		}
+
+		.music-btn:hover {
+			transform: scale(1.05);
+			box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+		}
+
+		.music-btn.playing {
+			background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+		}
+	</style>
 </head>
 
-<!-- Background music - Ek Zindagi -->
-<style>
-	.music-container {
-		margin-top: 20px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 10px;
-	}
-
-	.music-player {
-		width: 300px;
-		height: 200px;
-		border-radius: 12px;
-		overflow: hidden;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-		display: none;
-	}
-
-	.music-player.show {
-		display: block;
-	}
-
-	.music-btn {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		border: none;
-		border-radius: 50px;
-		padding: 12px 20px;
-		color: white;
-		font-size: 14px;
-		cursor: pointer;
-		box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-		transition: all 0.3s ease;
-		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-	}
-
-	.music-btn:hover {
-		transform: scale(1.05);
-		box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-	}
-
-	.music-btn.playing {
-		background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-	}
-</style>
-
 <body>
-	Hundred Dreams
-	<br>
-	7/100
-	<ul>
-		<li> Publish a memoir
-		<li> Publish a novel
-		<li> Publish a sci-fi novel
-		<li> Publish a children’s book
-		<li> Publish a tech book
-		<li> Publish a short story
-		<li> Bootstrap a startup
-		<li> Build a profitable software business
-		<li> Live in the mountains
-		<li> Live in a caravan
-		<li> Live a nomadic life for a year
-		<li> <s> Live in a new country </s> (2016)
-		<li> <s> Live alone </s> (2017)
-		<li> <s> Learn to ski </s> (2018)
-		<li> Learn to parallel ski
-		<li> Learn to surf
-		<li> <s> Learn to swim </s> (2017)
-		<li> Learn to float
-		<li> <s> Learn to fly (paraglide) </s> (2021)
-		<li> Paraglide for an hour
-		<li> Learn to fly (engineless glider)
-		<li> Witness a blue whale jumping
-		<li> Witness dolphins jumping
-		<li> <s> Witness the northern lights </s> (2024)
-		<li> Witness a breathtaking meteor shower
-		<li> Witness the deep sea
-		<li> Witness the great migration in Africa
-		<li> Travel to the moon
-		<li> Travel to Antarctica
-		<li> Win a WSOP bracelet
-		<li> Win the WSOP main event
-		<li> WSOP Player of the Year
-		<li> Fit enough to do 10 pullups
-		<li> Read War & Peace
-		<li> <s> Read LOTR </s> (2025)
-		<li> Play a guitar strumming song
-		<li> Play a guitar fingerpicking song
-		<li> Play a piano song
-		<li> ...
-	</ul>
-
-	<div class="music-container">
-		<div class="music-player" id="musicPlayer">
-			<div id="ytPlayer"></div>
+	<div class="container text-center">
+		<h2>Hundred Dreams</h2>
+		<p>7/100</p>
+		<div class="dream-list">
+			<ul>
+				<li> Publish a memoir
+				<li> Publish a novel
+				<li> Publish a sci-fi novel
+				<li> Publish a children’s book
+				<li> Publish a tech book
+				<li> Publish a short story
+				<li> Bootstrap a startup
+				<li> Build a profitable software business
+				<li> Live in the mountains
+				<li> Live in a caravan
+				<li> Live a nomadic life for a year
+				<li> <s> Live in a new country </s> (2016)
+				<li> <s> Live alone </s> (2017)
+				<li> <s> Learn to ski </s> (2018)
+				<li> Learn to parallel ski
+				<li> Learn to surf
+				<li> <s> Learn to swim </s> (2017)
+				<li> Learn to float
+				<li> <s> Learn to fly (paraglide) </s> (2021)
+				<li> Paraglide for an hour
+				<li> Learn to fly (engineless glider)
+				<li> Witness a blue whale jumping
+				<li> Witness dolphins jumping
+				<li> <s> Witness the northern lights </s> (2024)
+				<li> Witness a breathtaking meteor shower
+				<li> Witness the deep sea
+				<li> Witness the great migration in Africa
+				<li> Travel to the moon
+				<li> Travel to Antarctica
+				<li> Win a WSOP bracelet
+				<li> Win the WSOP main event
+				<li> WSOP Player of the Year
+				<li> Fit enough to do 10 pullups
+				<li> Read War & Peace
+				<li> <s> Read LOTR </s> (2025)
+				<li> Play a guitar strumming song
+				<li> Play a guitar fingerpicking song
+				<li> Play a piano song
+				<li> ...
+			</ul>
 		</div>
-		<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Music</button>
+
+		<div class="music-container">
+			<div class="music-player" id="musicPlayer">
+				<div id="ytPlayer"></div>
+			</div>
+			<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵 Play Music</button>
+		</div>
 	</div>
 
 	<!-- YouTube IFrame Player API -->

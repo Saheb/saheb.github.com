@@ -6,36 +6,33 @@ title: Home
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saheb's projects</title>
     <link rel="icon" type="image/png" href="/saheb-circle.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        body {
-            font-family: sans-serif;
+        /* Specific override for centering if needed, though style.css .container handles most */
+        .project-list {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-            font-size: 20px;
-            margin: 10px;
-            color: blue;
+            min-height: 80vh;
+            /* Keep the vertical centering look */
         }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <p>
-        <a href="https://saheb.github.io/rl-snake/"> rl-snake </a> applying reinforcement learning to the game of snake
-    </p>
-    <br />
-    <a href="/college_projects"> Ancient / College Projects (before 2014) </a>
+    <div class="container project-list">
+        <p>
+            <a href="https://saheb.github.io/rl-snake/"> rl-snake </a> applying reinforcement learning to the game of
+            snake
+        </p>
+        <br />
+        <a href="/college_projects"> Ancient / College Projects (before 2014) </a>
+    </div>
 </body>
 
 </html>

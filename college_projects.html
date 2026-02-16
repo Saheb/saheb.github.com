@@ -6,100 +6,76 @@ title: Home
 <html>
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>College Projects</title>
 	<link rel="icon" type="image/png" href="/saheb-circle.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		h1 {
+			color: #666;
+			font-weight: normal;
+			text-align: center;
+			font-size: 36px;
+			/* Reduced from 50px for mobile safety */
+			font-family: sans-serif;
+			margin-top: 5%;
+			margin-bottom: 30px;
+		}
+	</style>
 </head>
-<style type="text/css">
-	h1 {
-		color: #666;
-		font-weight: normal;
-		text-align: center;
-		font-size: 50px;
-		font-family: sans-serif;
-		margin-top: 5%
-	}
 
-	p {
-		padding: 20px 10px 20px 20px;
-		margin: auto;
-		color: #222;
-		font-weight: high;
-		font-size: 20px;
-		text-align: left;
-		font-style: italic;
-		font-family: "Georgia";
-		text-align: center;
-	}
-</style>
-<h1> College Projects </h1>
-<table width="100%">
+<body>
+	<div class="container">
+		<h1> College Projects </h1>
 
-	<tr>
-		<td>
-			<p>
-				<img src="/ogdf.png" width="500px" height="300px"> <br>
+		<div class="project-grid">
+			<div class="project-item">
+				<img src="/ogdf.png" class="project-image" alt="OGDF">
 				<a href="http://www.ogdf.net/doku.php/news#november_19th_2013google_summer_of_code_has_finished"
-					target="_blank"> Porting OGDF to Web(GSOC 2013) </a>
-			</p>
+					target="_blank" class="project-title"> Porting OGDF to Web(GSOC 2013) </a>
+			</div>
 
-		</td>
-		<td>
-			<p>
-				<img src="/ascend.png" width="500px" height="300px"> <br>
-				<a href="http://ascend4.org/User:Saheb" target="_blank">Canvas Improvements for ASCEND(GSOC 2012) </a>
-			</p>
-		</td>
-	</tr>
+			<div class="project-item">
+				<img src="/ascend.png" class="project-image" alt="ASCEND">
+				<a href="http://ascend4.org/User:Saheb" target="_blank" class="project-title">Canvas Improvements for
+					ASCEND(GSOC 2012) </a>
+			</div>
 
-	<tr>
-		<td>
-			<p>
-				<img src="/aibirds.png" width="500px" height="300px"> <br>
-				<a href="https://aibirds.org/2013-Papers/Team-Descriptions/sbirds.pdf" target="_blank"> Angry Birds
-					Player </a>
-			</p>
-		</td>
-		<td>
-			<p>
-				<img src="/poker_bot.png" width="500px" height="300px"> <br>
-				<a href="https://github.com/Saheb/PokerBot" target="_blank">Poker Player </a>
-			</p>
-		</td>
-	</tr>
+			<div class="project-item">
+				<img src="/aibirds.png" class="project-image" alt="Angry Birds">
+				<a href="https://aibirds.org/2013-Papers/Team-Descriptions/sbirds.pdf" target="_blank"
+					class="project-title"> Angry Birds Player </a>
+			</div>
 
-	<tr>
-		<td>
-			<p>
-				<img src="/sudoku.gif" width="500px" height="300px"> <br>
-				<a href="https://github.com/Saheb/Sudoku-Solver" target="_blank"> Sudoku Solver </a>
-			</p>
+			<div class="project-item">
+				<img src="/poker_bot.png" class="project-image" alt="Poker Bot">
+				<a href="https://github.com/Saheb/PokerBot" target="_blank" class="project-title">Poker Player </a>
+			</div>
 
-		</td>
-		<td>
-			<p>
-				<img src="/8queens.gif" width="500px" height="300px"> <br>
-				<a href="https://github.com/Saheb/Chess-Queens" target="_blank"> 8 Queens Problem
-			</p>
-		</td>
-	</tr>
+			<div class="project-item">
+				<img src="/sudoku.gif" class="project-image" alt="Sudoku">
+				<a href="https://github.com/Saheb/Sudoku-Solver" target="_blank" class="project-title"> Sudoku Solver
+				</a>
+			</div>
 
-	<tr>
-		<td>
-			<p>
-				<img src="/clustering.png" width="500px" height="300px"> <br>
-				<a href="Movie Clustering.pdf" target="_blank"> Movie Clustering </a>
-			</p>
+			<div class="project-item">
+				<img src="/8queens.gif" class="project-image" alt="8 Queens">
+				<a href="https://github.com/Saheb/Chess-Queens" target="_blank" class="project-title"> 8 Queens Problem
+				</a>
+			</div>
 
-		</td>
-		<td>
-			<p>
-				<img src="/astar.gif" width="500px" height="300px"> <br>
-				<a href="PathFindingProblem.pdf" target="_blank">Study on Path Finding Problem</a>
-			</p>
-		</td>
-	</tr>
+			<div class="project-item">
+				<img src="/clustering.png" class="project-image" alt="Clustering">
+				<a href="Movie Clustering.pdf" target="_blank" class="project-title"> Movie Clustering </a>
+			</div>
 
-
-</table>
+			<div class="project-item">
+				<img src="/astar.gif" class="project-image" alt="Path Finding">
+				<a href="PathFindingProblem.pdf" target="_blank" class="project-title">Study on Path Finding Problem</a>
+			</div>
+		</div>
+	</div>
+</body>
 
 </html>
