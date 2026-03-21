@@ -16,59 +16,81 @@ title: Home
 <body>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"> </script>
 
-	<div class="container">
-		<p> Blogs <br>
-			<a href="https://medium.com/sam-the-learner" target="_blank">Life</a>
-			| <a href="https://medium.com/code-and-words" target="_blank">Tech</a>
-		</p>
+	<div class="app-layout">
+		<div class="sidebar">
+			<div class="container sidebar-content">
+				<p>
+					<img src="saheb23.jpg" class="profile-image" alt="Saheb Motiani" />
+				</p>
 
-		<p>
-			<img src="saheb23.jpg" class="profile-image" alt="Saheb Motiani" />
-		</p>
+				<p class="bio-text">A writer, a programmer, and an amateur poker player. </p>
 
-		<p class="bio-text">A writer, a programmer, and an amateur poker player. </p>
+				<p>
+					<a href="/projects.html" target="content-frame">Projects</a>
+				</p>
 
-		<p>
-			<a href="https://drive.google.com/file/d/1bZrAq03Up7hgzt31WFR59Q5_Kc11kQJJ/view?usp=drive_link"
-				target="_blank">C.V.</a>
-			| <a href="/projects" target="_blank">Projects</a>
-		</p>
+				<p> Blogs <br>
+					<a href="https://medium.com/sam-the-learner" target="_blank">Life</a>
+					| <a href="https://medium.com/code-and-words" target="_blank">Tech</a>
+				</p>
 
-		<div class="social-links">
-			<a href="https://www.instagram.com/saheb.motiani" target="_blank">
-				<img class="social-icon" src="ig.png" alt="Instagram">
-			</a>
-			<a href="https://www.x.com/sahebmotiani" target="_blank">
-				<img class="social-icon" src="twitter.png" alt="Twitter">
-			</a>
-			<a href="https://www.goodreads.com/saheb" target="_blank">
-				<img class="social-icon" src="goodreads.png" alt="Goodreads">
-			</a>
-			<a href="https://github.com/saheb" target="_blank">
-				<img class="social-icon" src="github.png" alt="GitHub">
-			</a>
-			<a href="https://www.quora.com/Saheb-Motiani" target="_blank">
-				<img class="social-icon" src="quora.jpg" alt="Quora">
-			</a>
-			<a href="https://in.linkedin.com/in/sahebmotiani" target="_blank">
-				<img class="social-icon" src="linkedin.png" alt="LinkedIn">
-			</a>
+				<div class="subpage-links">
+					<a href="/100dreams.html" target="content-frame"> 100 dreams </a>
+					<a href="/travelMap.html" target="content-frame"> Travel Map </a>
+					<a href="/software.html" target="content-frame"> Software I use </a>
+					<a href="/hardware.html" target="content-frame"> Hardware I own </a>
+					<a href="/quotes.html" target="content-frame"> Quotes I love </a>
+					<a href="/books.html" target="content-frame"> Books I recommend</a>
+				</div>
+			</div>
+			
+			<div class="sidebar-footer">
+				<div class="social-links sidebar-socials">
+					<a href="https://www.instagram.com/saheb.motiani" target="_blank">
+						<img class="social-icon" src="ig.png" alt="Instagram">
+					</a>
+					<a href="https://www.x.com/sahebmotiani" target="_blank">
+						<img class="social-icon" src="twitter.png" alt="Twitter">
+					</a>
+					<a href="https://www.goodreads.com/saheb" target="_blank">
+						<img class="social-icon" src="goodreads.png" alt="Goodreads">
+					</a>
+					<a href="https://github.com/saheb" target="_blank">
+						<img class="social-icon" src="github.png" alt="GitHub">
+					</a>
+					<a href="https://www.quora.com/Saheb-Motiani" target="_blank">
+						<img class="social-icon" src="quora.jpg" alt="Quora">
+					</a>
+					<a href="https://in.linkedin.com/in/sahebmotiani" target="_blank">
+						<img class="social-icon" src="linkedin.png" alt="LinkedIn">
+					</a>
+				</div>
+			</div>
 		</div>
-
-		<p>
-			<a href="/100dreams" target="_blank"> 100 dreams </a>
-			<br> <br>
-			<a href="/travelMap" target="_blank"> Travel Map </a>
-			<br> <br>
-			<a href="/software" target="_blank"> Software I use </a>
-			<br> <br>
-			<a href="/quotes" target="_blank"> Quotes I love </a>
-			<br> <br>
-			<a href="/books" target="_blank"> Books I recommend</a>
-		</p>
+		<div class="content-area" id="content-area">
+			<iframe name="content-frame" id="content-frame" src=""></iframe>
+		</div>
 	</div>
 
-	<br> <br>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const links = document.querySelectorAll('a[target="content-frame"]');
+			const contentArea = document.getElementById('content-area');
+			
+			links.forEach(link => {
+				link.addEventListener('click', function(e) {
+					if (window.innerWidth < 768) {
+						e.preventDefault();
+						window.location.href = this.href;
+					} else {
+						contentArea.classList.add('active');
+						links.forEach(l => l.classList.remove('active-link'));
+						this.classList.add('active-link');
+					}
+				});
+			});
+		});
+	</script>
 	<!-- Cloudflare Web Analytics -->
 	<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
 		data-cf-beacon='{"token": "8e3ca4508c444f3b8c29a353c21806e4"}'></script><!-- End Cloudflare Web Analytics -->
