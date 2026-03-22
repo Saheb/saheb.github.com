@@ -189,7 +189,7 @@ p {
     text-align: left;
     margin: 0;
     max-width: none;
-    padding: 40px 30px; /* More generous padding */
+    padding: 15px 30px 40px 30px; /* Reduced top padding to move name up */
     flex: 1;
     overflow-y: auto;
 }

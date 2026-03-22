@@ -1,0 +1,353 @@
+---
+layout: null
+title: CV
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saheb Motiani - CV</title>
+    <link rel="icon" type="image/png" href="/saheb-circle.png">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        /* Specific styles for Resume */
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 40px 20px;
+            position: relative;
+            /* Base for absolute positioning */
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .resume-header h1 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .resume-header p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .resume-section {
+            margin-bottom: 40px;
+        }
+
+        .resume-section h2 {
+            font-size: 26px;
+            color: #007bff;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 22px;
+            color: #333;
+            margin: 0;
+        }
+
+        .job-company {
+            font-size: 20px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-date {
+            font-size: 18px;
+            color: #888;
+        }
+
+        .resume-list {
+            list-style-position: outside;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .resume-list li {
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .resume-intro {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Mobile adjust */
+        @media (max-width: 768px) {
+            .job-header {
+                flex-direction: column;
+            }
+
+            .job-date {
+                margin-top: 5px;
+            }
+        }
+
+        .download-btn {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* Print-specific Styles */
+        @media print {
+            @page {
+                margin: 1cm;
+                size: portrait;
+            }
+
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            .resume-container {
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+            }
+
+            .download-btn {
+                display: none !important;
+                /* Hide button only during print */
+            }
+
+            .resume-section h2 {
+                border-bottom: 2px solid #333 !important;
+                color: #000 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .job-title {
+                color: #000 !important;
+            }
+
+            a {
+                text-decoration: underline !important;
+                color: #007bff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resume-header h1 {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container resume-container">
+        <div class="resume-header">
+            <h1>Saheb Motiani</h1>
+            <p>London, UK | saheb37@duck.com</p>
+            <p><a href="https://linkedin.com/in/sahebmotiani" target="_blank">LinkedIn</a> | <a
+                    href="https://github.com/saheb" target="_blank">Github</a> | <a href="/"
+                    target="_parent">Website</a></p>
+            <button onclick="window.print()" class="download-btn">Print / Save as PDF</button>
+        </div>
+
+        <div class="resume-intro">
+            <p>An engineer who loves investigations, alignment, and hard problems.</p>
+            <p>Most of my professional experience has been in developing product-based application-level software, but I
+                am more interested in machine learning and research engineering roles these days.</p>
+            <p>I've been on a sabbatical since June 2025, finding fun, exploring reenforcement learning, and vibe coding
+                personalized software.</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Meta </span>
+                    </h3>
+                    <span class="job-date">Jan 2024 - May 2025</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Unblocked $7.7M in revenue (154% of target) by delivering a feature enabling non-admin users to
+                        appeal ad account integrity enforcements for high-value (Silver+) advertisers.</li>
+                    <li>Resolved a critical concurrency bug causing notification delivery failures, and drove proactive
+                        engineering initiatives to improve system reliability and overall operational excellence.</li>
+                    <li>Drove unification of Propagated Enforcements across Paid and Organic channels. </li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Babylon Health</span>
+                    </h3>
+                    <span class="job-date">Aug 2019 - Oct 2023</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Led a small cross-functional team. We are exploring a new delivery model for Applied Science
+                        tribe, where we take complete ownership of delivering Health Score experience.</li>
+                    <li>Steering evaluation of Flink for Babylon's AI Platform by building repeatable patterns for ETLs,
+                        feature engineering, data pipelines, and stream processing for model training and inference.
+                    </li>
+                    <li>Architected HealthIQ – a bespoke pattern for productionizing ML models generating risk
+                        predictions using Faust-based serverless functions. Model output powered internal products such
+                        as Outreach Tracker & Clinical Portals. (Python)</li>
+                    <li>Developed Flowbase – an arsenal of tools & services for chatbot flow platform enabling the
+                        execution of Healthcheck & Symptom Checker products. (Scala)</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Disney Streaming
+                            Services</span></h3>
+                    <span class="job-date">Aug 2017 – June 2019</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Designed and developed Media Analysis Services (MAS) - a distributed microsystem that ensures
+                        the accuracy of incoming media files prior to transcoding and packaging. Utilized on-premises
+                        services and AWS for asynchronous communication via Kafka.</li>
+                    <li>Lead a squad of three-four members for three-four months.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Software Engineer <span class="job-company">@ Cake Solutions (acquired by
+                            Disney)</span></h3>
+                    <span class="job-date">Nov 2016 – Aug 2017</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Broadcast Control Plane (BCP): Automates the media acquisition process of associating source and
+                        media exchange pipelines for the live media productions for ESPN+ and MLB.TV, powered by the
+                        BamTech platform.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Senior Associate <span class="job-company">@ Morgan Stanley</span></h3>
+                    <span class="job-date">Aug 2014 – July 2016</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Developed a framework for sending and receiving SMS messages to/from handsets, with integrations
+                        to 3rd party SMS aggregators such as Nexmo and Twilio.</li>
+                    <li>Guided an intern in evaluating Slick Framework proof of concept.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Online Courses</h2>
+            <ul class="resume-list">
+                <li><strong>Finding Hidden Messages in DNA (Bioinformatics I) by University of California San Diego (Jan
+                        2026)</li>
+                <li><strong>Neural Networks and Deep Learning</strong> by DeepLearning.AI (May 2023)</li>
+                <li><strong>Machine Learning</strong> by Stanford University (April 2016)</li>
+                <li><strong>Principles of Reactive Programming</strong> (June 2015)</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h2>Skills</h2>
+            <ul class="resume-list">
+                <li><strong>Proficient:</strong> Python, Scala, Numpy, Kafka, AWS</li>
+                <li><strong>Intermediate/Beginner:</strong> Pytoch, Java, TypeScript, React, Flink, GCP, SQL, GraphQL,
+                    Kubernetes</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h2>Open-Source Contributions</h2>
+            <ul class="resume-list">
+                <li><strong>Play-silhouette (2017)</strong> - Allow to pass user state with the social state handlers.
+                </li>
+                <li><strong>Scala-Kafka-Client (2017)</strong> - Add optional call-backs in Auto Partition Mode.</li>
+                <li><strong>Mlpack (2014)</strong> - A small contribution for unification of constructors for all tree
+                    types</li>
+                <li><strong>OGDF.js for the Web (Google Summer of Code 2013)</strong> - Ported Open Graph Drawing
+                    Framework C++ library to JavaScript using Emscripten</li>
+                <li><strong>ASCEND (Google Summer of Code 2012)</strong> - Custom Icons for Canvas Based Modeler</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h2>Side Projects</h2>
+            <ul class="resume-list">
+                <li><strong>rl-snake:</strong> Applying reinforcement learning to the game of Snake. (<a
+                        href="https://saheb.github.io/rl-snake/"
+                        style="text-decoration: none; color: #007bff;">View</a>)</li>
+                <li><strong>tastebento.com:</strong> A social discovery app for curating "Top 4" profiles and
+                    discovering "Taste Twins." (<a href="https://tastebento.com"
+                        style="text-decoration: none; color: #007bff;">View</a>)</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h2>Education</h2>
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Dhirubhai Ambani Institute of Information and Communication Technology
+                        (DA-IICT)</h3>
+                    <span class="job-date">July 2010 – May 2014</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Bachelor of Technology, Information and Communication Technology.</li>
+                    <li><strong>Relevant Courses:</strong> Algorithms and Data Structures; Information Retrieval;
+                        Software Engineering; Operating Systems; Databases; Graph Theory.</li>
+                    <li><strong>Research Project:</strong> Movie Classification using k-means and hierarchical
+                        clustering algorithms.</li>
+                </ul>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #888; font-style: italic; margin-top: 50px;">
+            Outside work I enjoy spending my time reading and writing; I also love playing and studying poker.
+        </p>
+
+    </div>
+</body>
+
+</html>
