@@ -29,7 +29,7 @@ The JSON logs finally coughed up the fatal error:
 
 This wasn't an IDE bug. It was a Git parsing crash.
 
-To understand why this happens, you have to look at how modern AI coding assistants interact with version control. To build a context window, the editor's language server parses your Git history. Antigravity relies on an open-source parsing library (go-git) that lacks support for the worktreeConfig extension.
+To understand why this happens, you have to look at how modern AI coding assistants interact with version control. To build a context window, the editor's language server parses your Git history. Antigravity relies on a Git parsing library under the hood that lacks support for the `worktreeConfig` extension — a limitation shared by several popular open-source parsers, including `libgit2` and `go-git`.
 
 The plot twist? I had been using Claude Code in those exact same folders earlier in the week.
 
@@ -47,7 +47,7 @@ Finding that one line took hours.
 
 Tracking down that worktree bug also threw into sharp relief a problem I'd been half-ignoring: you cannot run every new AI tool simultaneously.
 
-At one point, I had Antigravity, standard VS Code, Claude Code, and Codex all running on the same machine. These tools are built on similar underlying architectures (like Electron and Node.js) and they will aggressively fight over the same local ports, IPC sockets, and file-watching limits.
+At one point, I had Antigravity, VS Code (Github Copilot, Cline, Ollama), Claude Code, OpenCode, and Codex all running on the same machine. These tools are built on similar underlying architectures (like Electron and Node.js) and they will aggressively fight over the same local ports, IPC sockets, and file-watching limits.
 
 When multiple AI tools simultaneously poll your version control, they hit each other's `.git/index.lock` files, denying access and crashing background loops. We are pushing our local OS limits just by having these tools actively monitor our file trees.
 
@@ -63,7 +63,7 @@ Experienced ML practitioners treat model artifacts as first-class infrastructure
 
 Transitioning into heavy Machine Learning engineering means your environments are no longer just lightweight text files; they are massive data pipelines, model checkpoints, and training logs.
 
-**Add `.gitignore` and `.vscode/settings.json` entries for your model artifacts.** Explicitly prevent AI file-watchers from attempting to index massive dataset directories or `.git` files in worktrees. If your tools can't see the files, they can't corrupt them.
+**Add `.gitignore` and `.antigravityignore` entries for your model artifacts.** Explicitly prevent AI file-watchers from attempting to index massive dataset directories or `.git` files in worktrees. If your tools can't see the files, they can't corrupt them.
 
 **Isolate your tools.** Pick one AI assistant per active workspace. Let them own the local ports and sockets without competition.
 
