@@ -4,4 +4,4 @@ gem "jekyll"
 gem "csv"
 gem "bigdecimal"
 gem "webrick"
-gem "github-pages", group: :jekyll_plugins
+# gem "github-pages", group: :jekyll_plugins

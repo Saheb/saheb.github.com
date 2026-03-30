@@ -1,0 +1,98 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="icon" type="image/png" href="/saheb-circle.png">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 40px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: #333;
+        }
+        .blog-container h1 {
+            color: #111;
+            font-size: 2.2em;
+            margin-bottom: 0.5em;
+            line-height: 1.3;
+        }
+        .blog-container h2 {
+            color: #111;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .blog-container h3 {
+            color: #111;
+            margin-top: 1.2em;
+        }
+        .blog-container p {
+            font-size: 1.1em;
+            margin-bottom: 1.2em;
+        }
+        .blog-container code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+            font-size: 0.9em;
+        }
+        .blog-container pre {
+            background-color: #f6f8fa;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5em;
+        }
+        .blog-container pre code {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-size: 0.9em;
+        }
+        .blog-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .blog-container a:hover {
+            text-decoration: underline;
+        }
+        .blog-container blockquote {
+            margin: 0 0 1.5em;
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+        }
+        .blog-container ul, .blog-container ol {
+            font-size: 1.1em;
+            padding-left: 2em;
+            margin-bottom: 1.5em;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: #666 !important;
+        }
+        .back-link:hover {
+            color: #333 !important;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <a href="/blog" class="back-link">← Back to Blog</a>
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </div>
+</body>
+</html>
