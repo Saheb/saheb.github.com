@@ -1,6 +1,7 @@
 ---
 layout: blog-post
 title: "The Day My AI Editor Went Silent: Debugging Git Worktrees, Phantom Configs, and Lost Weights"
+date: 2026-03-30
 ---
 
 Building reinforcement learning environments is already a complex exercise in managing state, rewards, and training loops. You expect the agent you are training to act unpredictably. You don't expect the AI agent writing your code to completely flatline.
