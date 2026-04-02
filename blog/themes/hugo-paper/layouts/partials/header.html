@@ -24,12 +24,6 @@
       htmlClass.remove('not-ready');
     }, 10);
 
-    // mobile menu
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
     // dark theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     const lightBg = '{{- $bg_color -}}'.replace(/"/g, '');
