@@ -5,18 +5,27 @@ My personal website.
 ## Local Development
 
 ### Prerequisites
-- Ruby 3.4+
-- Bundler
+- Hugo (extended): `brew install hugo`
 
-### Setup
-1. Install dependencies:
-   ```bash
-   bundle install
-   ```
+### Serve the site
+```bash
+# Build the blog (outputs to _site/blog/)
+cd blog && hugo && cd ..
 
-2. Run the server:
-   ```bash
-   bundle exec jekyll serve
-   ```
+# Serve the entire site from _site/
+python3 -m http.server 4000 --directory _site
+```
 
-The site will be available at http://127.0.0.1:4000
+The site will be available at http://localhost:4000
+
+### Blog only (with live reload)
+```bash
+cd blog && hugo server
+```
+
+The blog will be available at http://localhost:1313
+
+### Add a new post
+```bash
+cd blog && hugo new content my-post.md
+```

@@ -1,0 +1,17 @@
+baseURL = 'https://saheb.github.io/blog/'
+languageCode = 'en-us'
+title = "Saheb's AI Journey"
+publishDir = '../_site/blog'
+theme = 'hugo-paper'
+relativeURLs = true
+canonifyURLs = true
+
+[params]
+  color = 'blue'
+  monoDarkIcon = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true

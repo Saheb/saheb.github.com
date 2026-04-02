@@ -1,5 +1,4 @@
 ---
-layout: blog-post
 title: "The Day My AI Editor Went Silent: Debugging Git Worktrees, Phantom Configs, and Lost Weights"
 date: 2026-03-30
 ---
