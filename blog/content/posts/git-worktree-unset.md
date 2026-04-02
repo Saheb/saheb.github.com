@@ -13,11 +13,15 @@ Here is what I learned about how our tools actually work under the hood, and why
 
 ## The Mystery of the Silent Beep
 
-At first, I assumed I had hit a quota limit or an authentication bug. I'll be honest: I had been cycling through multiple Google accounts to maximize free tokens — we all need more tokens, don't we? — and my first thought was that Antigravity had started actively detecting and blocking that abuse. I cleared the keychain, purged the global state databases, and reset the local workspace caches, half expecting a ban message to surface. Nothing. What made it especially maddening was that some workspaces were completely fine — the AI connected instantly and behaved normally. But two specific project directories were dead on arrival. It wasn't a global outage. It wasn't my account. Something was different about those particular workspaces, and I had no idea what.
+At first, I assumed I had hit a quota limit or an authentication bug. I'll be honest: I had been cycling through multiple Google accounts to maximize free tokens—we all need more tokens, don't we?—and my first thought was that Antigravity had started actively detecting and blocking that abuse. I cleared the keychain, purged the global state databases, and reset the local workspace caches, half expecting a ban message to surface. Nothing.
 
-To catch the error before the UI swallowed it, I had to open the IDE's internal Developer Tools and watch the raw JSON payload of the language server.
+What made it especially maddening was that some workspaces were completely fine—the AI connected instantly and behaved normally. But two specific project directories were dead on arrival. It wasn't a global outage. It wasn't my account. Something was fundamentally broken inside those specific folders, and I had no idea what.
 
-When I finally caught the payload, it revealed the agent was registering my input, reading my project path, and instantly dropping its status to IDLE without throwing a network request. It wasn't a server issue; the agent was crashing locally before it could even formulate a thought.
+To catch the error before the UI swallowed it, I cracked open the IDE's internal Developer Tools and started monitoring the raw network traffic.
+
+When I hit send and watched the Network tab, the exact point of failure finally revealed itself. The frontend wasn't just freezing; it was firing a request to the local language server proxy (exa.language_server_pb.LanguageServerService/GetAgentScripts), and that backend request was instantly flatlining.
+
+I clicked into the failing network request and checked the response payload. The agent wasn't dropping to IDLE or timing out—it was explicitly throwing a fatal error from the backend that the UI simply didn't know how to render.
 
 ## The Smoking Gun: Claude Code and Git Worktrees
 
