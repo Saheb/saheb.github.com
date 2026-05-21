@@ -192,7 +192,7 @@
         <div class="resume-intro">
             <p>An engineer who loves investigations, alignment, and hard problems.</p>
             <p>Most of my professional experience has been in developing product-based application-level software, but I
-                am more interested in machine learning and research engineering roles these days.</p>
+                am more interested in machine learning, AI infrastructure, and research engineering roles these days.</p>
             <p>I've been on a sabbatical since June 2025, finding fun, exploring reinforcement learning, and vibe coding
                 personalized software.</p>
         </div>
@@ -280,10 +280,40 @@
             <ul class="resume-list">
                 <li><strong>rl-snake:</strong> Applying reinforcement learning to the game of Snake. (<a
                         href="https://saheb.github.io/rl-snake/"
-                        style="text-decoration: none; color: #007bff;">View</a>)</li>
+                        style="text-decoration: none; color: #007bff;">View</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented and evaluated a
+                            progression of RL paradigms, including DQN, REINFORCE, PPO, curriculum learning, and
+                            imitation learning.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Experimented with Intrinsic
+                            Curiosity Modules (ICM) to analyze its impact on sparse-reward exploration.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Integrated convolutional
+                            architectures (CNNs) to optimize spatial feature extraction and scale policy performance to
+                            larger grid dimensions.</li>
+                    </ul>
+                </li>
+                <li><strong>rl-poker:</strong> A heads-up NLHE poker agent using a CFR blueprint for preflop and
+                    Cython-accelerated endgame solving. (<a href="https://github.com/Saheb/rl-poker"
+                        style="text-decoration: none; color: #007bff;">View</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built CFR and MCCFR blueprint
+                            solvers for Leduc and No-Limit Hold'em, training 2B+ iterations against Slumbot with
+                            vectorized Cython extensions achieving 180k it/s throughput.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented Single Deep CFR with a
+                            custom RangeEncoder architecture (1326→64 bottleneck) for range-conditional postflop play,
+                            integrating reach-weighted traversal sampling and composition-based synthetic range
+                            injection.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Developed a hybrid agent combining
+                            a preflop blueprint, SD-CFR flop inference, and a real-time endgame solver with
+                            depth-limited subgame solving across turn and river.</li>
+                    </ul>
                 <li><strong>tastebento.com:</strong> A social discovery app for curating "Top 4" profiles and
                     discovering "Taste Twins." (<a href="https://tastebento.com"
                         style="text-decoration: none; color: #007bff;">View</a>)</li>
+                </li>
+                <li><strong>content-moderation-env</strong> A small, deterministic OpenEnv for evaluating AI agents on user-generated content (UGC) moderation. The environment simulates the sequential review workflow a human trust & safety analyst follows: read a post, check the thread for context, apply a policy, and issue a decision — keep, warn, remove, or escalate. (<a href="https://github.com/Saheb/content-moderation-env"
+                        style="text-decoration: none; color: #007bff;">View</a>)</li>
+                </li>
             </ul>
         </div>
 
@@ -291,7 +321,7 @@
             <h2>Skills</h2>
             <ul class="resume-list">
                 <li><strong>Proficient:</strong> Python, Scala, Numpy, Kafka, AWS</li>
-                <li><strong>Intermediate/Beginner:</strong> Pytoch, Java, TypeScript, React, Flink, GCP, SQL, GraphQL,
+                <li><strong>Intermediate/Beginner:</strong> Pytorch, Java, TypeScript, React, Flink, GCP, SQL, GraphQL,
                     Kubernetes</li>
             </ul>
         </div>
@@ -299,9 +329,9 @@
         <div class="resume-section">
             <h2>Online Courses</h2>
             <ul class="resume-list">
-                <li>Finding Hidden Messages in DNA (Bioinformatics I) by University of California San Diego (Jan
-                    2026)</li>
-                <li>Neural Networks and Deep Learning</strong> by DeepLearning.AI (May 2023)</li>
+                <li><a href="https://www.coursera.org/account/accomplishments/verify/M2UBXKQ9LKPP">Finding Hidden Messages in DNA (Bioinformatics I) by University of California San Diego (Jan
+                    2026)</a></li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/7FQMGCBC35WT">Neural Networks and Deep Learning</strong> by DeepLearning.AI (May 2023)</a></li>
                 <li>Machine Learning</strong> by Stanford University (April 2016)</li>
                 <li>Principles of Reactive Programming</strong> (June 2015)</li>
             </ul>
@@ -328,7 +358,7 @@
         </div>
 
         <p style="text-align: center; color: #888; font-style: italic; margin-top: 50px;">
-            Outside work I enjoy spending my time reading and writing; I also love playing and studying poker.
+            Outside work I enjoy reading, writing, hiking, skiing, playing tennis and poker.
         </p>
 
     </div>
