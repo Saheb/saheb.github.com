@@ -1,5 +1,5 @@
 ---
-title: "On failing at my first Kaggle competition"
+title: "On failing at my first Kaggle competition (1/n)"
 date: 2026-06-25
 ---
 
