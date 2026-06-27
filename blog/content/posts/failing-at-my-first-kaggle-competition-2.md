@@ -153,4 +153,4 @@ Another idea was to have planner like features that would plan waves of attacks 
 
 Because it was likely it would result in similar Nash equilibrium.
 
-All of this back and forth, because I wasn’t confident with the root cause. Little did I know, outmassing—the metric I was relying on so much was a common way of winning, even in the games that I won against producer-planner like agents, they’d be outmassed just as much, like 98% of the time. And I learned that the metric we were having was nothing but a ghost.
+All of this back and forth, because I wasn’t confident with the root cause. Little did I know, outmassing—the metric I was relying on so much was a common way of winning, even in the games that I won against producer-planner like agents, they’d be outmassed just as much, like 98% of the time. And I learned that the metric we were chasing was a ghost.
