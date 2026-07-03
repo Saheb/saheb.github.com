@@ -136,6 +136,6 @@ And around that core, I made everything slower. I chased metrics I didn’t full
 
 Each of these is fixable. That’s what makes it a failure worth writing down.
 
-I wish I had spent more time exploring other ideas that I learned for RL poker like Monte Carlo Tree Search, and found ways outside self-play to overcome the limitation of self-play.
+I wish I had spent more time exploring other ideas that I learned from RL poker like Monte Carlo Tree Search, and found ways outside self-play to overcome the limitations of self-play.
 
 Now, I plan to read the write ups from top 10 agents/kagglers, learn from them, and build future versions of Orbit Wars agent.
