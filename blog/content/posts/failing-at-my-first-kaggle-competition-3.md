@@ -62,9 +62,11 @@ Why isn’t agent producing these actions?
 Because **the policy generates the data. You can only reach states that your policy takes you towards.**
 Unlike supervised learning where the training of the model doesn’t affect the data it trains on, in self play it does.
 
+```
 current policy π  ──acts in the env──►  rollout (states, actions, rewards)
         ▲                                          │
         └────────── PPO update on that data ───────┘
+```
 
 If the current policy doesn’t send 50 ships to contested neutral planets, then you collect zero samples of how that turns out. The policy can be blind to its own blind spots and stay that way.
 
