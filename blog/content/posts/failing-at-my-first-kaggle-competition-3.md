@@ -83,4 +83,38 @@ What will then?
 
 Entropy, curriculum, and reward signal.
 
-To be continued...
+Entropy controls the exploration. Sampling is our exploration. In training we sample the actions and perform less probable actions as well to collect the advantage, if it’s positive then the probability of that action increases.
+This is also why on-policy data is narrow, but live. The spread of actions it explores is dictated by the current distribution. 
+Sharp logits in current distribution -> low entropy -> little exploration -> narrow data.
+In order to prevent this entropy collapse, we had entropy bonus coefficient that pushes the distributions to stay flatter so sampling can keep exploring.
+
+sample → explore → generate diverse on-policy data → advantage reinforces the good draws → distribution sharpens → less exploration. 
+
+Entropy bonus fights the sharpening.
+
+This nicely takes us to the gaps I had in my training - evaluation setup.
+
+Despite knowing it’s fatally important to keep them synced, I fell for it a few times.
+
+Some differences are expected, like the win rate during trading will not be identical to win rate during evals, because of sampling. At inference/eval, we use argmax, and take the action with highest  probability.
+
+Others should not have gone unnoticed, like comets were missing from training. So it was training on a simplified version during training and at eval time the game was different, as comets starts spawning from step 50. 
+
+Even after fixing the physics, the policy mis-saw them, because is_comet was still hardcode to 0. 
+Stales values in features predicted wrong orbit for the comets.
+
+And then there was wrong assumptions baked it from the initially phase, that must’ve been added to keep he game simple, like limit max moves to 8 and max owned planets to 16, and one action per slot. None of these limitations existed in the actual kaggle environment, but were added at start and I didn’t pay enough attention to diligently scrutinize them.
+
+Now some notes so I don’t find myself in the mess of metrics.
+
+Instead of relying on manually watching the game to determine agent’s performance and gaps, I had metrics to understand where it was lagging. 
+
+That was mistake in its own, but I also over relied on the metrics. And aggregation comes with its own flaws, that make it harder to reason. Like if the fire ratio metric is high, does it mean the agent has a spraying problem? Not necessarily, it needs to be tuned based on empire size, and the phase of the game; towards the end if the agent is firing a lot, that’s likely the right game play. And if we do have a lot of planets then the number can go higher because of end game. So they need to be bucketed based on game phase, like early game (<50 steps), mid game, etc.
+
+Mean is not always right to use, for example, the fleet size that’s being sent, one huge fleet size could skew the number higher.
+
+Agent often used to send 1 ship probes that didn’t result in capture of planet; this behavior was learned from self-play. It could’ve happened because it was getting positive reward for it. Or definitely note getting penalized for it. Again, this metric was 0 in the initial phases, and rose high towards the end. Whether or not to allow agent continue to train after it was something I still can’t confidently conclude. This cycle happened multiple times, when a metric I was chasing was later concluded to be flawed after deeper investigation. So lesson is to have fewer metrics that you understand deeply — how they are being calculated, at what point is the calculation happening, what information is being lost during reduction/aggregation.
+
+A lot of these mistakes might have been avoided if I had written the code myself. I say might, because bugs and gaps would still remain in human written code. But the level of overall comprehensive understanding is higher when you write and curate each line yourself, after careful thought and consideration. A better workflow I’ve discovered involves spending a lot of time reviewing the generated code and take the reins yourself if agent can’t seem to follow your instructions as you’d like.
+
+Code bloat, flop, and other perils of using LLMs to generate code is beyond the scope of this post.
