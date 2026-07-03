@@ -1,0 +1,75 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a8a"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a7dbd"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="418" rx="10" fill="#ffffff" stroke="#dddddd"/>
+
+  <!-- feature boxes -->
+  <g text-anchor="middle">
+    <rect x="30" y="45" width="160" height="56" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+    <text x="110" y="68" font-size="15" font-weight="600" fill="#333">Planet features</text>
+    <text x="110" y="88" font-size="12" fill="#777">position, owner, production…</text>
+
+    <rect x="30" y="125" width="160" height="56" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+    <text x="110" y="148" font-size="15" font-weight="600" fill="#333">Fleet features</text>
+    <text x="110" y="168" font-size="12" fill="#777">ships, ETA, destination…</text>
+
+    <rect x="30" y="205" width="160" height="56" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+    <text x="110" y="228" font-size="15" font-weight="600" fill="#333">Global features</text>
+    <text x="110" y="248" font-size="12" fill="#777">economy, ship split…</text>
+
+    <rect x="30" y="285" width="160" height="56" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+    <text x="110" y="308" font-size="15" font-weight="600" fill="#333">Pairwise features</text>
+    <text x="110" y="328" font-size="12" fill="#777">per source→target slot</text>
+  </g>
+
+  <!-- arrows features -> transformer -->
+  <g stroke="#8a8a8a" stroke-width="1.6" fill="none">
+    <path d="M 190 73 C 240 73, 240 150, 285 165" marker-end="url(#arrow)"/>
+    <path d="M 190 153 C 235 153, 240 175, 285 185" marker-end="url(#arrow)"/>
+    <path d="M 190 233 C 235 233, 240 215, 285 205" marker-end="url(#arrow)"/>
+    <path d="M 190 313 C 240 313, 240 240, 285 225" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- transformer -->
+  <rect x="288" y="125" width="180" height="140" rx="10" fill="#eef2f9" stroke="#4a7dbd" stroke-width="1.8"/>
+  <text x="378" y="185" font-size="17" font-weight="700" fill="#2c4f7c" text-anchor="middle">Entity</text>
+  <text x="378" y="207" font-size="17" font-weight="700" fill="#2c4f7c" text-anchor="middle">Transformer</text>
+  <text x="378" y="232" font-size="12" fill="#777" text-anchor="middle">(the black box)</text>
+
+  <!-- target head -->
+  <rect x="560" y="55" width="170" height="58" rx="8" fill="#fdf6ec" stroke="#c9a35e"/>
+  <text x="645" y="79" font-size="15" font-weight="600" fill="#333" text-anchor="middle">Target head</text>
+  <text x="645" y="99" font-size="12" fill="#777" text-anchor="middle">which planet?</text>
+
+  <!-- fire head -->
+  <rect x="560" y="175" width="170" height="58" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+  <text x="645" y="199" font-size="15" font-weight="600" fill="#333" text-anchor="middle">Fire head</text>
+  <text x="645" y="219" font-size="12" fill="#777" text-anchor="middle">launch or not?</text>
+
+  <!-- ship head -->
+  <rect x="560" y="295" width="170" height="58" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+  <text x="645" y="319" font-size="15" font-weight="600" fill="#333" text-anchor="middle">Ship head</text>
+  <text x="645" y="339" font-size="12" fill="#777" text-anchor="middle">how many ships?</text>
+
+  <!-- arrows transformer -> heads -->
+  <g stroke="#8a8a8a" stroke-width="1.6" fill="none">
+    <path d="M 468 160 C 510 140, 510 100, 555 90" marker-end="url(#arrow)"/>
+    <path d="M 468 200 C 505 200, 515 204, 555 204" marker-end="url(#arrow)"/>
+    <path d="M 468 235 C 510 255, 510 310, 555 322" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- conditioning arrows: target -> fire, target -> ship -->
+  <g stroke="#4a7dbd" stroke-width="1.8" fill="none" stroke-dasharray="5 4">
+    <path d="M 740 84 C 755 84, 755 204, 735 204" marker-end="url(#arrowBlue)"/>
+    <path d="M 748 84 C 762 84, 762 324, 735 324" marker-end="url(#arrowBlue)"/>
+  </g>
+
+  <text x="380" y="395" font-size="13.5" fill="#4a7dbd" text-anchor="middle" font-style="italic">Target decides first — fire and ship are conditioned on it (the dashed arrows I was missing).</text>
+</svg>

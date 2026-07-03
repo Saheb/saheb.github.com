@@ -1,0 +1,47 @@
+<svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f8f5f"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="758" height="398" rx="10" fill="#ffffff" stroke="#dddddd"/>
+
+  <!-- top: one turn, one scalar -->
+  <rect x="250" y="35" width="260" height="66" rx="10" fill="#eef6f0" stroke="#3f8f5f" stroke-width="1.8"/>
+  <text x="380" y="63" font-size="16" font-weight="700" fill="#2c6647" text-anchor="middle">One turn, one verdict</text>
+  <text x="380" y="86" font-size="14" fill="#2c6647" text-anchor="middle">advantage = +1 (this turn won)</text>
+
+  <!-- fan-out arrows, each labeled +1 -->
+  <g stroke="#3f8f5f" stroke-width="1.8" fill="none">
+    <path d="M 300 101 C 220 130, 180 150, 145 190" marker-end="url(#arrowG)"/>
+    <path d="M 380 101 L 380 190" marker-end="url(#arrowG)"/>
+    <path d="M 460 101 C 540 130, 580 150, 615 190" marker-end="url(#arrowG)"/>
+  </g>
+  <g font-size="14" font-weight="700" fill="#3f8f5f" text-anchor="middle">
+    <text x="196" y="150">+1</text>
+    <text x="396" y="150">+1</text>
+    <text x="564" y="150">+1</text>
+  </g>
+
+  <!-- three planet decisions -->
+  <rect x="35" y="196" width="210" height="76" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+  <text x="140" y="226" font-size="15" font-weight="600" fill="#333" text-anchor="middle">Planet 3</text>
+  <text x="140" y="248" font-size="13" fill="#555" text-anchor="middle">decisive attack —</text>
+  <text x="140" y="264" font-size="13" fill="#555" text-anchor="middle">actually won the turn</text>
+
+  <rect x="275" y="196" width="210" height="76" rx="8" fill="#f7f7f7" stroke="#c9c9c9"/>
+  <text x="380" y="226" font-size="15" font-weight="600" fill="#333" text-anchor="middle">Planet 7</text>
+  <text x="380" y="248" font-size="13" fill="#555" text-anchor="middle">sat idle —</text>
+  <text x="380" y="264" font-size="13" fill="#555" text-anchor="middle">did nothing at all</text>
+
+  <rect x="515" y="196" width="210" height="76" rx="8" fill="#f4f7fb" stroke="#b9c8dc"/>
+  <text x="620" y="226" font-size="15" font-weight="600" fill="#333" text-anchor="middle">Planet 12</text>
+  <text x="620" y="248" font-size="13" fill="#555" text-anchor="middle">well-timed save —</text>
+  <text x="620" y="264" font-size="13" fill="#555" text-anchor="middle">held the frontier</text>
+
+  <!-- caption -->
+  <text x="380" y="316" font-size="13.5" fill="#555" text-anchor="middle">Every planet’s decision gets the exact same credit — sitting idle is reinforced alongside the decisive attack.</text>
+  <text x="380" y="338" font-size="13.5" fill="#555" text-anchor="middle">On a losing turn the same fan-out punishes them all, including the well-timed save.</text>
+  <text x="380" y="372" font-size="13" fill="#999" text-anchor="middle" font-style="italic">One scalar advantage, multiplied into every planet’s log-probability.</text>
+</svg>
