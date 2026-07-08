@@ -9,7 +9,7 @@ But I failed, according to my own standards, and naive high expectations.
 
 I wanted to be in top 10. I didn’t even end up in top 1000.
 
-The final scoreboard: a rating of 970, ranked 1189 out of 4729. Top 25%, nowhere near the top 10.
+The final scoreboard: a rating of 970, ranked 1060 out of 4729. Top 25%, nowhere near the top 10.
 
 Getting there took over 90 training runs across a month, and about $700 worth of GPU compute across GCP, AWS, and Jarvis Labs.
 
