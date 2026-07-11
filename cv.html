@@ -191,10 +191,84 @@
 
         <div class="resume-intro">
             <p>An engineer who loves investigations, alignment, and hard problems.</p>
-            <p>Most of my professional experience has been in developing product-based application-level software, but I
-                am more interested in machine learning, AI infrastructure, and research engineering roles these days.</p>
-            <p>I've been on a sabbatical since June 2025, finding fun, exploring reinforcement learning, and vibe coding
-                personalized software.</p>
+            <p>I'm seeking machine learning engineering and research engineering roles. Most of my professional
+                experience is in product software engineering; on sabbatical since June 2025, I've gone deep on
+                reinforcement learning — building self-play training systems from scratch, debugging transformer
+                training runs, and running everything on rented GPU infrastructure.</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Side Projects</h2>
+            <ul class="resume-list">
+                <li><strong>kaggle-orbit-wars:</strong> training a self-play RL agent for the Orbit Wars Kaggle
+                    competition, a multiplayer planet-capture strategy game. (<a
+                        href="https://github.com/Saheb/kaggle-orbit-wars"
+                        style="text-decoration: none; color: #007bff;">View</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Trained an entity-transformer
+                            policy with PPO self-play on a custom GPU-vectorised PyTorch environment (~4k env
+                            steps/sec on H100), warm-started via behaviour cloning from top-leaderboard replays.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built the full training stack:
+                            opponent league with prioritised fictitious self-play (PFSP), KL-anchored self-play to
+                            prevent policy collapse, action masking, reward shaping, and stratified 256-game
+                            evaluation panels against calibrated leaderboard opponents.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Ran one-change-per-run
+                            controlled experiments across GCP/H100 spot instances — profiled the loop end-to-end
+                            (PPO-compute-bound, not env-bound) and diagnosed self-play pathologies such as
+                            unanchored policy drift; agent beats ~1200-rated planner bots 57% head-to-head.</li>
+                    </ul>
+                </li>
+                <li><strong>rl-snake:</strong> applying reinforcement learning to the game of Snake. (<a
+                        href="https://saheb.github.io/rl-snake/"
+                        style="text-decoration: none; color: #007bff;">View</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented and evaluated a
+                            progression of RL paradigms, including DQN, REINFORCE, PPO, curriculum learning, and
+                            imitation learning.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Experimented with Intrinsic
+                            Curiosity Modules (ICM) to analyze its impact on sparse-reward exploration.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Integrated convolutional
+                            architectures (CNNs) to optimize spatial feature extraction and scale policy performance to
+                            larger grid dimensions.</li>
+                    </ul>
+                </li>
+                <li><strong>rl-poker:</strong> replicating poker research to build state of the art poker agents (<a href="https://github.com/Saheb/rl-poker"
+                        style="text-decoration: none; color: #007bff;">View</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built CFR and MCCFR blueprint
+                            solvers for Leduc and No-Limit Hold'em, training 2B+ iterations against Slumbot with
+                            vectorized Cython extensions achieving 180k it/s throughput.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented Single Deep CFR with a
+                            custom RangeEncoder architecture (1326→64 bottleneck) for range-conditional postflop play,
+                            integrating reach-weighted traversal sampling and composition-based synthetic range
+                            injection.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Developed a hybrid agent combining
+                            a preflop blueprint, SD-CFR flop inference, and a real-time endgame solver with
+                            depth-limited subgame solving across turn and river.</li>
+                    </ul>
+                </li>
+                <li><strong>tastebento.com:</strong> a social discovery app for curating "Top 4" profiles and
+                    discovering "Taste Twins." (<a href="https://tastebento.com"
+                        style="text-decoration: none; color: #007bff;">View</a>)</li>
+                <li><strong>content-moderation-env:</strong> a deterministic OpenEnv for evaluating AI agents on
+                    user-generated content moderation, built for the Meta PyTorch OpenEnv Hackathon. (<a
+                        href="https://github.com/Saheb/content-moderation-env"
+                        style="text-decoration: none; color: #007bff;">View</a> | <a
+                        href="https://saheb-content-moderation-env.hf.space"
+                        style="text-decoration: none; color: #007bff;">Demo</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Simulates the sequential trust
+                            & safety review workflow (read a post, gather thread context, apply a policy, issue a
+                            decision) across four graded task packs, with deterministic graders and dense reward
+                            shaping — over-censorship penalties, policy-citation bonuses, and deductions for
+                            skipping context on context-critical posts.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Benchmarked frontier LLMs on
+                            it: models converge on accuracy (~0.82 on the hard pack) but diverge widely on shaped
+                            reward (−0.93 to +6.39), separating genuine policy reasoning from correct guessing;
+                            live demo and benchmark hosted on Hugging Face Spaces.</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <div class="resume-section">
@@ -276,68 +350,20 @@
         </div>
 
         <div class="resume-section">
-            <h2>Side Projects</h2>
-            <ul class="resume-list">
-                <li><strong>rl-snake:</strong> applying reinforcement learning to the game of Snake. (<a
-                        href="https://saheb.github.io/rl-snake/"
-                        style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented and evaluated a
-                            progression of RL paradigms, including DQN, REINFORCE, PPO, curriculum learning, and
-                            imitation learning.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Experimented with Intrinsic
-                            Curiosity Modules (ICM) to analyze its impact on sparse-reward exploration.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Integrated convolutional
-                            architectures (CNNs) to optimize spatial feature extraction and scale policy performance to
-                            larger grid dimensions.</li>
-                    </ul>
-                </li>
-                <li><strong>rl-poker:</strong> replicating poker research to build state of the art poker agents (<a href="https://github.com/Saheb/rl-poker"
-                        style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built CFR and MCCFR blueprint
-                            solvers for Leduc and No-Limit Hold'em, training 2B+ iterations against Slumbot with
-                            vectorized Cython extensions achieving 180k it/s throughput.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented Single Deep CFR with a
-                            custom RangeEncoder architecture (1326→64 bottleneck) for range-conditional postflop play,
-                            integrating reach-weighted traversal sampling and composition-based synthetic range
-                            injection.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Developed a hybrid agent combining
-                            a preflop blueprint, SD-CFR flop inference, and a real-time endgame solver with
-                            depth-limited subgame solving across turn and river.</li>
-                    </ul>
-                <li><strong>tastebento.com:</strong> a social discovery app for curating "Top 4" profiles and
-                    discovering "Taste Twins." (<a href="https://tastebento.com"
-                        style="text-decoration: none; color: #007bff;">View</a>)</li>
-                </li>
-                <li><strong>content-moderation-env</strong> a small, deterministic OpenEnv for evaluating AI agents on user-generated content (UGC) moderation. The environment simulates the sequential review workflow a human trust & safety analyst follows: read a post, check the thread for context, apply a policy, and issue a decision — keep, warn, remove, or escalate. (<a href="https://github.com/Saheb/content-moderation-env"
-                        style="text-decoration: none; color: #007bff;">View</a>)</li>
-                </li>
-            </ul>
-        </div>
-
-        <div class="resume-section">
             <h2>Skills</h2>
             <ul class="resume-list">
-                <li><strong>Proficient:</strong> Python, Scala, Numpy, Kafka, AWS</li>
-                <li><strong>Intermediate/Beginner:</strong> Pytorch, Java, TypeScript, React, Flink, GCP, SQL, GraphQL,
+                <li>Python, PyTorch, NumPy, Scala, Kafka, AWS, GCP, SQL, Java, TypeScript, React, Flink, GraphQL,
                     Kubernetes</li>
             </ul>
         </div>
 
         <div class="resume-section">
-            <h2>Online Courses</h2>
-            <ul class="resume-list">
+            <h2>Education</h2>
+            <ul class="resume-list" style="margin-bottom: 25px;">
                 <li><a href="https://www.coursera.org/account/accomplishments/verify/M2UBXKQ9LKPP">Finding Hidden Messages in DNA (Bioinformatics I) by University of California San Diego (Jan
                     2026)</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/certificate/7FQMGCBC35WT">Neural Networks and Deep Learning</strong> by DeepLearning.AI (May 2023)</a></li>
-                <li>Machine Learning</strong> by Stanford University (April 2016)</li>
-                <li>Principles of Reactive Programming</strong> (June 2015)</li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/7FQMGCBC35WT">Neural Networks and Deep Learning by DeepLearning.AI (May 2023)</a></li>
             </ul>
-        </div>
-
-        <div class="resume-section">
-            <h2>Education</h2>
             <div class="job">
                 <div class="job-header">
                     <h3 class="job-title">Dhirubhai Ambani Institute of Information and Communication Technology
@@ -346,11 +372,11 @@
                 </div>
                 <ul class="resume-list">
                     <li>Bachelor of Technology, Information and Communication Technology.</li>
-                    <li>Research Project:</strong> Movie Classification using k-means and hierarchical
+                    <li><strong>Research Project:</strong> Movie Classification using k-means and hierarchical
                         clustering algorithms.</li>
-                    <li>OGDF.js for the Web (Google Summer of Code 2013)</strong> - Ported Open Graph Drawing
+                    <li><strong>OGDF.js for the Web (Google Summer of Code 2013)</strong> - Ported Open Graph Drawing
                         Framework C++ library to JavaScript using Emscripten</li>
-                    <li>ASCEND (Google Summer of Code 2012)</strong> - Custom Icons for Canvas Based Modeler
+                    <li><strong>ASCEND (Google Summer of Code 2012)</strong> - Custom Icons for Canvas Based Modeler
                     </li>
                 </ul>
             </div>
