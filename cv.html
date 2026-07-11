@@ -194,7 +194,7 @@
             <p>I'm seeking machine learning engineering and research engineering roles. Most of my professional
                 experience is in product software engineering; on sabbatical since June 2025, I've gone deep on
                 reinforcement learning — building self-play training systems from scratch, debugging transformer
-                training runs, and running everything on rented GPU infrastructure.</p>
+                training runs, and maximizing utilization of rented GPU infrastructure.</p>
         </div>
 
         <div class="resume-section">
@@ -213,23 +213,31 @@
                             prevent policy collapse, action masking, reward shaping, and stratified 256-game
                             evaluation panels against calibrated leaderboard opponents.</li>
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Ran one-change-per-run
-                            controlled experiments across GCP/H100 spot instances — profiled the loop end-to-end
+                            controlled experiments across GCP/AWS/JarvisLabs L4/H100 spot instances — profiled the loop end-to-end
                             (PPO-compute-bound, not env-bound) and diagnosed self-play pathologies such as
                             unanchored policy drift; agent beats ~1200-rated planner bots 57% head-to-head.</li>
                     </ul>
                 </li>
-                <li><strong>rl-snake:</strong> applying reinforcement learning to the game of Snake. (<a
-                        href="https://saheb.github.io/rl-snake/"
+                <li><strong>tastebento.com:</strong> a social discovery app with a production LLM pipeline
+                    generating grounded "Did You Know?" trivia from users' taste profiles. (<a
+                        href="https://tastebento.com"
                         style="text-decoration: none; color: #007bff;">View</a>)
                     <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented and evaluated a
-                            progression of RL paradigms, including DQN, REINFORCE, PPO, curriculum learning, and
-                            imitation learning.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Experimented with Intrinsic
-                            Curiosity Modules (ICM) to analyze its impact on sparse-reward exploration.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Integrated convolutional
-                            architectures (CNNs) to optimize spatial feature extraction and scale policy performance to
-                            larger grid dimensions.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Designed a layered reward
+                            pipeline for LLM outputs: verifiable hard gates (claim grounding against retrieved
+                            context, non-triviality vs user-visible fields, verbatim quiz answers) with soft quality
+                            scores and a bounded LLM-judge tiebreak — so fluency can never outvote factuality.
+                            Grading production outputs reframed the problem: 96% passed gates while 84% lacked
+                            specificity, shifting optimization from hallucination to blandness.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Shipped best-of-N rejection
+                            sampling over Llama-3.3-70B (parallel high-temperature candidates, grader+judge pooled
+                            selection, near-duplicate suppression); every production generation logs (context,
+                            candidates, rewards) tuples — accumulating GRPO-ready training data as a side effect.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built an offline fact-mining
+                            worker: a free 8B model scans entire Wikipedia articles in the background and distills
+                            trivia nuggets, each programmatically verified against its source passage
+                            (extract-then-verify) — moving read-time compute offline so serving prompts carry
+                            distilled depth for the whole catalog within a fixed token budget.</li>
                     </ul>
                 </li>
                 <li><strong>rl-poker:</strong> replicating poker research to build state of the art poker agents (<a href="https://github.com/Saheb/rl-poker"
@@ -247,9 +255,6 @@
                             depth-limited subgame solving across turn and river.</li>
                     </ul>
                 </li>
-                <li><strong>tastebento.com:</strong> a social discovery app for curating "Top 4" profiles and
-                    discovering "Taste Twins." (<a href="https://tastebento.com"
-                        style="text-decoration: none; color: #007bff;">View</a>)</li>
                 <li><strong>content-moderation-env:</strong> a deterministic OpenEnv for evaluating AI agents on
                     user-generated content moderation, built for the Meta PyTorch OpenEnv Hackathon. (<a
                         href="https://github.com/Saheb/content-moderation-env"
@@ -268,6 +273,10 @@
                             live demo and benchmark hosted on Hugging Face Spaces.</li>
                     </ul>
                 </li>
+                <li><strong>rl-snake:</strong> where the RL journey started — DQN, REINFORCE, PPO, curriculum and
+                    imitation learning, and ICM curiosity applied to Snake. (<a
+                        href="https://saheb.github.io/rl-snake/"
+                        style="text-decoration: none; color: #007bff;">View</a>)</li>
             </ul>
         </div>
 
