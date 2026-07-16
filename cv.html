@@ -277,9 +277,9 @@
                             prevent policy collapse, action masking, reward shaping, and stratified 256-game
                             evaluation panels against calibrated leaderboard opponents.</li>
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Ran one-change-per-run
-                            controlled experiments across GCP/AWS/JarvisLabs L4/H100 spot instances — profiled the loop
+                            controlled experiments across GCP/AWS/JarvisLabs L4/H100 spot instances, profiled the loop
                             end-to-end
-                            (PPO-compute-bound, not env-bound) and diagnosed self-play pathologies such as
+                            (PPO-compute-bound, not env-bound), and diagnosed self-play pathologies such as
                             unanchored policy drift; agent beats ~1200-rated planner bots 57% head-to-head.</li>
                     </ul>
                 </li>
@@ -290,17 +290,17 @@
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Designed a layered reward
                             pipeline for LLM outputs: verifiable hard gates (claim grounding against retrieved
                             context, non-triviality vs user-visible fields, verbatim quiz answers) with soft quality
-                            scores and a bounded LLM-judge tiebreak — so fluency can never outvote factuality.
+                            scores and a bounded LLM-judge tiebreak, so fluency can never outvote factuality.
                             Grading production outputs reframed the problem: 96% passed gates while 84% lacked
                             specificity, shifting optimization from hallucination to blandness.</li>
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Shipped best-of-N rejection
                             sampling over Llama-3.3-70B (parallel high-temperature candidates, grader+judge pooled
                             selection, near-duplicate suppression); every production generation logs (context,
-                            candidates, rewards) tuples — accumulating GRPO-ready training data as a side effect.</li>
+                            candidates, rewards) tuples, accumulating GRPO-ready training data as a side effect.</li>
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built an offline fact-mining
                             worker: a free 8B model scans entire Wikipedia articles in the background and distills
                             trivia nuggets, each programmatically verified against its source passage
-                            (extract-then-verify) — moving read-time compute offline so serving prompts carry
+                            (extract-then-verify), moving read-time compute offline so serving prompts carry
                             distilled depth for the whole catalog within a fixed token budget.</li>
                     </ul>
                 </li>
@@ -340,7 +340,7 @@
                             live demo and benchmark hosted on Hugging Face Spaces.</li>
                     </ul>
                 </li>
-                <li><strong>rl-snake:</strong> where the RL journey started — DQN, REINFORCE, PPO, curriculum and
+                <li><strong>rl-snake:</strong> where the RL journey started: DQN, REINFORCE, PPO, curriculum and
                     imitation learning, and ICM curiosity applied to Snake. (<a href="https://saheb.github.io/rl-snake/"
                         style="text-decoration: none; color: #007bff;">View</a>)
                     <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
