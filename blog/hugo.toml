@@ -9,6 +9,17 @@ canonifyURLs = true
 [params]
   color = 'blue'
   monoDarkIcon = true
+  mainSections = ['posts']
+
+[[menu.main]]
+  name = 'Posts'
+  pageRef = '/posts'
+  weight = 1
+
+[[menu.main]]
+  name = 'Notes'
+  pageRef = '/notes'
+  weight = 2
 
 [markup]
   [markup.goldmark]

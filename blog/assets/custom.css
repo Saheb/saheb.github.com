@@ -1,0 +1,9 @@
+/* Site custom css (shadows theme custom.css). */
+
+/* Active nav tab */
+.nav-wrapper nav a.nav-active {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
