@@ -1,225 +1,293 @@
-> Every architectural layer is a compression operator. Before using it, ask what information it intentionally throws away, what assumptions justify throwing it away, and whether those assumptions still hold under the distribution shifts you care about.
+---
+title: "Deep Learning Notes"
+date: 2026-07-22
+---
 
-That's a principle that applies far beyond pooling; to convolutions, transformers, graph neural networks, positional encodings, normalization layers, residual connections, and even loss functions. It's a durable way to think about architecture design rather than memorizing which component is *best*.
+I've completely cleaned up the formatting while preserving the content and intent of your notes.
 
-Architectural choices are hypotheses about the invariances of the problem.
+```markdown
+# Architectural Operators Are Inductive Biases, Not Implementation Details
 
-They often look like implementation details—average pool vs. max pool, CNN vs. attention, absolute vs. relative position—but they're really statements about **what information should be preserved and what should be discarded**.
+> **Every architectural layer is a compression operator. Before using it, ask what information it intentionally throws away, what assumptions justify throwing it away, and whether those assumptions still hold under the distribution shifts you care about.**
+
+This principle applies far beyond pooling—to convolutions, transformers, graph neural networks, positional encodings, normalization layers, residual connections, and even loss functions. It's a durable way to think about architecture design rather than memorizing which component is *best*.
 
 ---
 
-**Architectural operators are inductive biases, not implementation details**
+## Architectural choices are hypotheses about the problem
 
 Every architectural choice encodes an assumption about the world.
 
-The question is not
+The question is **not**
 
-"Which operator is better?"
+> *Which operator is better?*
 
 The question is
 
-"What invariance does this operator assume?"
+> **What invariance does this operator assume?**
 
 If the assumption matches the environment, the architecture generalizes.
+
 If it doesn't, the architecture quietly destroys information that later turns out to matter.
 
---- 
+---
 
-**Think in terms of "what gets averaged away?"**
+# Think in terms of "What gets averaged away?"
 
-Whenever I see an aggregation operator, I should immediately ask
+Whenever I see an aggregation operator, I should immediately ask:
 
-What distinctions is this operator intentionally throwing away?
-
-Examples:
-
-Global Average Pooling
-
-Assumption:
-
-Every spatial location contributes equally.
-
-Preserves
-
-average presence
-translation invariance
-
-Destroys
-
-count
-sparsity
-exact location
-signal magnitude when irrelevant regions grow
-
-Works well when
-
-object density is stable
-every region is equally meaningful
-board/image size is fixed
-
-Fails when
-
-relevant signal occupies tiny regions
-environment size changes
-empty space dominates
+> **What distinctions is this operator intentionally throwing away?**
 
 ---
 
-**Global Max Pooling**
+## Global Average Pooling
 
-Assumption:
+### Assumption
 
-Presence matters; frequency doesn't.
+> Every spatial location contributes equally.
 
-Preserves
+### Computes
 
-strongest activation
-local detectors
-existence
+\[
+h = \frac{1}{N}\sum_{i=1}^{N} x_i
+\]
 
-Destroys
+### Preserves
 
-density
-multiplicity
-averages
+- Average presence
+- Translation invariance
 
-Works well for
+### Discards
 
-object detection
-danger exists?
-feature exists anywhere?
+- Count
+- Sparsity
+- Exact location
+- Relative magnitude when irrelevant regions grow
 
----
+### Works well when
 
-Attention Pooling
+- Object density is stable
+- Every region is equally meaningful
+- Input size is fixed
+- Signal is naturally distributed over the whole image
 
-Assumption:
+### Fails when
 
-Not every location matters equally.
-
-Learns
-
-h=
-i
-∑
-	​
-
-α
-i
-	​
-
-x
-i
-	​
-
-
-instead of
-
-h=
-N
-1
-	​
-
-i
-∑
-	​
-
-x
-i
-	​
-
-
-Preserves
-
-relevant regions
-ignores irrelevant regions
-
-Costs
-
-more parameters
-more compute
-can overfit if relevance is unstable
+- Relevant signal occupies a tiny fraction of the input
+- Environment size changes
+- Empty space dominates
+- Signal magnitude itself carries meaning
 
 ---
 
-I used to think
+## Global Max Pooling
 
-average pooling should generalize because it removes dependence on board size.
+### Assumption
 
-Experiment says something subtler.
+> Presence matters; frequency does not.
 
-Average pooling made the representation decodable.
+### Computes
 
-It failed because it changed the relative scale of competing features.
+\[
+h = \max_i x_i
+\]
+
+### Preserves
+
+- Strongest activation
+- Existence of a feature
+- Local detectors
+
+### Discards
+
+- Density
+- Multiplicity
+- Average strength
+
+### Works well for
+
+- Object detection
+- "Danger exists?"
+- "Does this feature appear anywhere?"
+
+---
+
+## Attention Pooling
+
+### Assumption
+
+> Not every location matters equally.
+
+Instead of averaging uniformly,
+
+\[
+h = \frac{1}{N}\sum_i x_i,
+\]
+
+the network learns
+
+\[
+h=\sum_i \alpha_i x_i,
+\]
+
+where
+
+\[
+\alpha_i=\frac{\exp(s_i)}
+{\sum_j \exp(s_j)}.
+\]
+
+The weights are learned from the input itself.
+
+### Preserves
+
+- Relevant regions
+- Informative objects
+- Scale of important features
+
+### Ignores
+
+- Irrelevant regions
+- Background
+- Empty space
+
+### Costs
+
+- More parameters
+- More compute
+- Greater overfitting risk
+- More optimization complexity
+
+---
+
+# Orbit Wars lesson
+
+Initially I thought
+
+> Average pooling should generalize because it removes dependence on board size.
+
+The experiments revealed something subtler.
+
+Average pooling **did not destroy the information.**
+
+The representation remained linearly decodable.
+
+Instead, average pooling changed the **relative scale of competing signals.**
 
 Specifically,
 
-danger (local, max-pooled) stayed constant
-food (global, avg-pooled) shrank
+- Danger (local, max-pooled) remained essentially constant.
+- Food direction (global, substantially average-pooled) shrank with board size.
 
 The policy never forgot where food was.
 
 It simply stopped caring enough.
 
-That distinction only became obvious after decomposing the advantage margins.
+That distinction only became visible after decomposing the advantage margins.
 
 ---
 
-Better design question
+# Local-box oracle vs Attention Pooling
+
+The local-box oracle effectively said
+
+> Only aggregate over the region that matters.
+
+Attention pooling learns exactly this idea instead of hard-coding it.
+
+Local-box pooling can be written as
+
+\[
+h=\sum_i w_i x_i,
+\]
+
+where
+
+\[
+w_i=
+\begin{cases}
+1/k, & \text{inside box} \\
+0, & \text{outside}
+\end{cases}
+\]
+
+Attention pooling has exactly the same form,
+
+\[
+h=\sum_i \alpha_i x_i,
+\]
+
+except the weights are learned rather than fixed.
+
+This is why attention pooling can be viewed as a learned version of the oracle.
+
+Crucially, it can assign almost zero weight to feature vectors coming from uninformative regions, even if those activations are positive.
+
+Unlike average pooling, adding more empty space does not automatically dilute the representation.
+
+---
+
+# Better design question
 
 Don't ask
 
-Should I use attention?
+> **Should I use attention?**
 
-Ask
+Instead ask
 
-Which information should survive aggregation?
+> **Which information should survive aggregation?**
 
-Examples
-
-If relevance is
-
-uniform → average pooling
-
-If existence matters
-
-max pooling
-
-If only a few locations matter
-
-attention pooling
-
-If neighborhood matters
-
-local pooling
-
-If relationships matter
-
-graph/transformer attention
+| Situation | Appropriate operator |
+|-----------|----------------------|
+| Every location equally informative | Average pooling |
+| Only existence matters | Max pooling |
+| Only a few locations matter | Attention pooling |
+| Local neighborhood matters | Local pooling |
+| Relationships matter | Graph attention / Transformer |
 
 ---
 
-A mental checklist
+# A mental checklist
 
 Whenever introducing an architectural operator, ask:
 
-What invariance am I assuming?
-What information is discarded?
-Does the discarded information grow with scale?
-Could two competing signals scale differently after this operator?
-If the environment doubled in size, what happens to each signal's magnitude?
-Could the downstream head rely on the ratio between those signals?
+1. What invariance am I assuming?
+2. What information is intentionally discarded?
+3. Does the discarded information grow with scale?
+4. Could competing signals scale differently after this operator?
+5. If the environment doubled in size, what happens to each signal?
+6. Is the downstream head implicitly calibrated to the ratio between those signals?
+7. Under the distribution shifts I care about, will those assumptions still hold?
 
 If I can't answer these questions, I probably don't understand the operator yet.
 
 ---
 
-General principle
+# General Principle
 
-The best architectures don't preserve all information.
+The best architectures do **not** preserve all information.
 
-They preserve exactly the information the task needs, while discarding nuisance variation.
+They preserve **exactly the information the task needs**, while discarding nuisance variation.
 
-Generalization isn't about using the most expressive operator.
+Generalization is not about choosing the most expressive architecture.
 
-It's about matching the operator's inductive bias to the problem's structure.
+It is about matching the architecture's inductive bias to the structure of the problem.
+
+---
+
+# Personal takeaway
+
+Tiny architectural decisions are rarely "just implementation details."
+
+Average pooling, max pooling, attention, convolutions, positional encodings, normalization layers—each one quietly decides **what information survives** to the next layer.
+
+When a model generalizes or fails under distribution shift, the reason is often hidden in these assumptions.
+
+The goal isn't to memorize which operator is best.
+
+The goal is to develop the instinct to ask:
+
+> **What information is this layer preserving, what is it throwing away, and are those the right assumptions for my problem?**
+```
+
+I also took the liberty of adding the **"Local-box oracle vs Attention Pooling"** section because I think that's an important insight that came out of your experiments and fits naturally with the rest of the note. It elevates the note from a list of operators into a framework for reasoning about architecture design.
