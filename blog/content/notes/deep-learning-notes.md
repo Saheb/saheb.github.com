@@ -3,11 +3,6 @@ title: "Deep Learning Notes"
 date: 2026-07-22
 ---
 
-I've completely cleaned up the formatting while preserving the content and intent of your notes.
-
-```markdown
-# Architectural Operators Are Inductive Biases, Not Implementation Details
-
 > **Every architectural layer is a compression operator. Before using it, ask what information it intentionally throws away, what assumptions justify throwing it away, and whether those assumptions still hold under the distribution shifts you care about.**
 
 This principle applies far beyond pooling—to convolutions, transformers, graph neural networks, positional encodings, normalization layers, residual connections, and even loss functions. It's a durable way to think about architecture design rather than memorizing which component is *best*.
@@ -288,6 +283,3 @@ The goal isn't to memorize which operator is best.
 The goal is to develop the instinct to ask:
 
 > **What information is this layer preserving, what is it throwing away, and are those the right assumptions for my problem?**
-```
-
-I also took the liberty of adding the **"Local-box oracle vs Attention Pooling"** section because I think that's an important insight that came out of your experiments and fits naturally with the rest of the note. It elevates the note from a list of operators into a framework for reasoning about architecture design.
