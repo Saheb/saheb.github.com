@@ -11,6 +11,13 @@
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections -}}<!---->
 {{- end -}}
 
+<!-- Page header -->
+{{ with .Content }}
+<div class="section-intro">
+  {{ . }}
+</div>
+{{ end }}<!---->
+
 <!-- Articles -->
 {{- $paginator := .Paginate $pages -}} {{- range $index, $page :=
 $paginator.Pages -}}<!---->
