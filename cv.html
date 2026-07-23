@@ -263,11 +263,7 @@
         </div>
 
         <div class="resume-intro">
-            <p>An engineer who loves investigations, alignment, and hard problems.</p>
-            <p>I'm seeking machine learning engineering and research engineering roles. Most of my professional
-                experience is in product software engineering; on sabbatical since June 2025, I've gone deep on
-                reinforcement learning — building self-play training systems from scratch, debugging transformer
-                training runs, and maximizing utilization of rented GPU infrastructure.</p>
+            <p>A software engineer transitioning into machine learning, with hands-on experience building reinforcement learning systems, investigating training failures, and solving challenging engineering problems.</p>
         </div>
 
         <div class="resume-section">
@@ -291,6 +287,27 @@
                             end-to-end
                             (PPO-compute-bound, not env-bound), and diagnosed self-play pathologies such as
                             unanchored policy drift; agent beats ~1200-rated planner bots 57% head-to-head.</li>
+                    </ul>
+                </li>
+                <li><strong>rl-snake:</strong> where the RL journey started — climbing the RL stack on Snake,
+                    ending in a mechanistic study of board-size generalization: one agent trained only on small
+                    boards plays 100×100 zero-shot. (<a href="https://saheb.github.io/rl-snake/"
+                        style="text-decoration: none; color: #007bff;">View</a>)
+                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built a size-invariant agent
+                            (egocentric head-relative representation + attention pooling) trained on a curriculum of
+                            small boards (≤22×22) that navigates 100×100 grids zero-shot — 98% of moves toward the
+                            goal, a 4.5× extrapolation with no degradation, where single-size agents are no better
+                            than random by board 16.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Diagnosed the failure with
+                            linear probes: the direction-to-food signal was decodable but unused (its magnitude
+                            collapsed), probe-validated architecture fixes made real-play transfer <em>worse</em>,
+                            and the true bottleneck was state-distribution coverage — 71–88% of big-board states are
+                            out-of-support for a small-board policy — not the architecture.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Earlier phases climbed the RL
+                            stack from scratch — tabular/double Q-learning, REINFORCE, PPO, curriculum + imitation
+                            learning, and an ICM curiosity ablation (helped PPO under sparse reward, not DQN) — and
+                            showed a from-pixels ConvNet beating a 24-feature hand-engineered DQN.</li>
                     </ul>
                 </li>
                 <li><strong>tastebento.com:</strong> a social discovery app with a production LLM pipeline
@@ -349,26 +366,21 @@
                             reward (−0.93 to +6.39), separating genuine policy reasoning from correct guessing;
                             live demo and benchmark hosted on Hugging Face Spaces.</li>
                     </ul>
-                </li>
-                <li><strong>rl-snake:</strong> where the RL journey started: DQN, REINFORCE, PPO, curriculum and
-                    imitation learning, and ICM curiosity applied to Snake. (<a href="https://saheb.github.io/rl-snake/"
-                        style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented and evaluated a
-                            progression of RL paradigms, including DQN, REINFORCE, PPO, curriculum learning, and
-                            imitation learning.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Experimented with Intrinsic
-                            Curiosity Modules (ICM) to analyze its impact on sparse-reward exploration.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Integrated convolutional
-                            architectures (CNNs) to optimize spatial feature extraction and scale policy performance to
-                            larger grid dimensions.</li>
-                    </ul>
-                </li>
-            </ul>
+                </li>            </ul>
         </div>
 
         <div class="resume-section">
             <h2>Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Machine Learning Sabbatical</h3>
+                    <span class="job-date">Aug 2025 – Present</span>
+                </div>
+                <ul class="resume-list">
+                    <li>Full-time self-directed transition into machine learning and reinforcement learning; building RL agents and training systems from scratch, investigating training failures, and running GPU experiments end-to-end.</li>
+                </ul>
+            </div>
 
             <div class="job">
                 <div class="job-header">

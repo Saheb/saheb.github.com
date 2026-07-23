@@ -1,5 +1,5 @@
 ---
-title: "RL Generalization — Revision Notes"
+title: "RL Generalization Notes"
 date: 2026-07-20
 ---
 
