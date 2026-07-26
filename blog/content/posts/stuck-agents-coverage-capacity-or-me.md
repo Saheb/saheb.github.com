@@ -9,7 +9,7 @@ It's not at all hard to notice the beauty of it; it's omnipresent and most of us
 
 These abstract ideas were present in some concrete form in my side projects. Across Snake, poker, and Orbit Wars, the thing that mattered most was not scale, but whether the training distribution actually contained the behaviour I wanted. I'll share a few examples.
 
-In [Snake](https://saheb.github.io/blog/posts/lessons-from-my-rl-experiments-with-snake/), the agent wouldn't move closer to food, because it thought surviving in circles and not dying was enough. On probing (linear probe on the hidden state) I found out that the agent knew where the food was; the direction was present in the representation. So this wasn't the case where model was unable to learn something. Digging deeper into states, I found that agent trained on smaller boards was never exposed to situations that dominated bigger boards: food far away, open space with no wall nearby. Scale or architecture wasn't going to fix this. It needed better exposure: a wider training distribution that included bigger board sizes. An agent trained on mixed board sizes 10 and 20 was able to zero-shot a 100×100 board (97.6% toward-food ~86 food/game; a 5× extrapolation with no degradation; performance actually improves with size).
+In [Snake](https://saheb.github.io/blog/posts/lessons-from-my-rl-experiments-with-snake/), the agent wouldn't move closer to food, because it thought surviving in circles and not dying was enough. On running a linear probe on the hidden state I found out that the agent knew where the food was; the direction was present in the representation. So this wasn't the case where model was unable to learn something. Digging deeper into states, I found that agent trained on smaller boards was never exposed to situations that dominated bigger boards: food far away, open space with no wall nearby. Scale or architecture wasn't going to fix this. It needed better exposure: a wider training distribution that included bigger board sizes. An agent trained on mixed board sizes 10 and 20 was able to zero-shot a 100×100 board (97.6% toward-food ~86 food/game; a 5× extrapolation with no degradation; performance actually improves with size).
 
 Snake has no opponent, so the training distribution is whatever sizes it is trained on; the clean case.
 
@@ -43,7 +43,7 @@ What connects to my own problem is what the agent measures itself against. In po
 
 ### Diagnosis
 
-In all three projects, the thing that moved me forward wasn't a new algorithm — it was being able to look at a stuck agent and investigate *why* it was stuck. When an agent won't do something it should, there are only a few reasons, and each one needs a different fix:
+In all three projects, the thing that moved me forward wasn't a new algorithm — it was being able to look at a stuck agent,  investigate *why* it was stuck, and know which failure mode it was in. When an agent won't do something it should, there are only a few reasons, and each one needs a different fix:
 
 - Can the architecture *express* the action? (capacity)
 - Does it have the necessary *data* — has its own training ever put it in that situation? (coverage)
