@@ -263,7 +263,8 @@
         </div>
 
         <div class="resume-intro">
-            <p>Software engineer with product engineering experience, now focused on machine learning through hands-on reinforcement learning systems.</p>
+            <p>Software engineer with product engineering experience, now focused on machine learning through hands-on
+                reinforcement learning systems.</p>
         </div>
 
         <div class="resume-section">
@@ -271,43 +272,43 @@
             <ul class="resume-list">
                 <li><strong>kaggle-orbit-wars:</strong> training a self-play RL agent for the Orbit Wars Kaggle
                     competition, a multiplayer planet-capture strategy game. (<a
-                        href="https://github.com/Saheb/kaggle-orbit-wars"
-                        target="_blank"
+                        href="https://github.com/Saheb/kaggle-orbit-wars" target="_blank"
                         style="text-decoration: none; color: #007bff;">View</a>)
                     <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built and trained an entity-transformer reinforcement learning agent
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built and trained an
+                            entity-transformer reinforcement learning agent
                             using PPO self-play on a custom GPU-vectorised PyTorch environment (~4k env
-                            steps/sec on H100), warm-started via behaviour cloning from top-leaderboard replays.</li>
+                            steps/sec on H100), trained from scratch with no imitation warm-start.</li>
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built the full training stack:
                             opponent league with prioritised fictitious self-play (PFSP), KL-anchored self-play to
                             prevent policy collapse, action masking, reward shaping, and stratified 256-game
                             evaluation panels against calibrated leaderboard opponents.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Ran one-change-per-run
-                            controlled experiments across GCP/AWS/JarvisLabs L4/H100 spot instances, profiled the loop
-                            end-to-end
-                            (PPO-compute-bound, not env-bound), and diagnosed self-play pathologies such as
-                            unanchored policy drift; agent beats ~1200-rated planner bots 57% head-to-head.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Ran one-change-per-run controlled
+                            experiments across GCP/JarvisLabs L4/H100 spot instances, profiled the loop end-to-end
+                            (PPO-compute-bound, not env-bound), and diagnosed self-play pathologies such as unanchored
+                            policy drift; from-scratch self-play reached 98% head-to-head against ~1200-rated planner
+                            bots over 100M steps.</li>
                     </ul>
                 </li>
-                <li><strong>rl-snake:</strong> where the RL journey started — climbing the RL stack on Snake,
-                    ending in a mechanistic study of board-size generalization: one agent trained only on small
+                <li><strong>rl-snake:</strong> where the RL journey started: climbing the RL stack on Snake,
+                    ending in a mechanistic study of board-size generalization; one agent trained only on small
                     boards plays 100×100 zero-shot. (<a href="https://saheb.github.io/rl-snake/"
                         style="text-decoration: none; color: #007bff;">View</a>)
                     <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built a size-invariant agent
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">BBuilt a size-invariant agent
                             (egocentric head-relative representation + attention pooling) trained on a curriculum of
-                            small boards {10, 20} that navigates 100×100 grids zero-shot — 98% of moves toward the
-                            goal, a 4.5× extrapolation with no degradation, where single-size agents are no better
-                            than random by board 16.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Diagnosed the failure with
-                            linear probes: the direction-to-food signal was decodable but unused (its magnitude
-                            collapsed), probe-validated architecture fixes made real-play transfer <em>worse</em>,
-                            and the true bottleneck was state-distribution coverage — 71–88% of big-board states are
-                            out-of-support for a small-board policy — not the architecture.</li>
+                            small boards {10, 20} that navigates 100×100 grids zero-shot at 98% of moves toward the
+                            goal, a 4.5× extrapolation with no degradation, where single-size agents are no better than
+                            random by board 16.</li>
+                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Diagnosed the failure with linear
+                            probes: the direction-to-food signal was decodable but unused (its magnitude collapsed), and
+                            probe-validated architecture fixes made real-play transfer worse. The true bottleneck was
+                            state-distribution coverage, not architecture: 71–88% of big-board states are out-of-support
+                            for a small-board policy.</li>
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Earlier phases climbed the RL
-                            stack from scratch — tabular/double Q-learning, REINFORCE, PPO, curriculum + imitation
-                            learning, and an ICM curiosity ablation (helped PPO under sparse reward, not DQN) — and
-                            showed a from-pixels ConvNet beating a 24-feature hand-engineered DQN.</li>
+                            stack from scratch (tabular/double Q-learning, REINFORCE, PPO, curriculum + imitation
+                            learning, and an ICM curiosity ablation that helped PPO under sparse reward but not DQN),
+                            and showed a from-pixels ConvNet beating a 24-feature hand-engineered DQN.</li>
                     </ul>
                 </li>
                 <li><strong>tastebento.com:</strong> a social discovery app with a production LLM pipeline
@@ -332,8 +333,7 @@
                     </ul>
                 </li>
                 <li><strong>rl-poker:</strong> replicating poker research to build state of the art poker agents (<a
-                        href="https://github.com/Saheb/rl-poker"
-                        target="_blank"
+                        href="https://github.com/Saheb/rl-poker" target="_blank"
                         style="text-decoration: none; color: #007bff;">View</a>)
                     <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
                         <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built CFR and MCCFR blueprint
@@ -343,15 +343,11 @@
                             custom RangeEncoder architecture (1326→64 bottleneck) for range-conditional postflop play,
                             integrating reach-weighted traversal sampling and composition-based synthetic range
                             injection.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Developed a hybrid agent combining
-                            a preflop blueprint, SD-CFR flop inference, and a real-time endgame solver with
-                            depth-limited subgame solving across turn and river.</li>
                     </ul>
                 </li>
                 <li><strong>content-moderation-env:</strong> a deterministic OpenEnv for evaluating AI agents on
                     user-generated content moderation, built for the Meta PyTorch OpenEnv Hackathon. (<a
-                        href="https://github.com/Saheb/content-moderation-env"
-                        target="_blank"
+                        href="https://github.com/Saheb/content-moderation-env" target="_blank"
                         style="text-decoration: none; color: #007bff;">View</a> | <a
                         href="https://saheb-content-moderation-env.hf.space"
                         style="text-decoration: none; color: #007bff;">Demo</a>)
@@ -366,7 +362,8 @@
                             reward (−0.93 to +6.39), separating genuine policy reasoning from correct guessing;
                             live demo and benchmark hosted on Hugging Face Spaces.</li>
                     </ul>
-                </li>            </ul>
+                </li>
+            </ul>
         </div>
 
         <div class="resume-section">
@@ -378,7 +375,9 @@
                     <span class="job-date">Aug 2025 – Present</span>
                 </div>
                 <ul class="resume-list">
-                    <li>Spent a year building reinforcement learning systems from scratch and running end-to-end experiments across multiple environments to understand training dynamics, exploration, and generalization.</li>
+                    <li>Spent a year building reinforcement learning systems from scratch and running end-to-end
+                        experiments across multiple environments to understand training dynamics, exploration, and
+                        generalization.</li>
                 </ul>
             </div>
 
