@@ -1,0 +1,19 @@
+{{- /* Renders a "Contents" box from the page's headings.
+       Shown automatically when a page has 2+ headings.
+       Override per page with `toc: true` / `toc: false` in front matter. */ -}}
+
+{{- $headings := partial "toc-hoist.html" .Fragments.Headings -}}
+{{- $count := 0 -}}
+{{- range $id, $h := .Fragments.HeadingsMap -}}
+{{- if $id -}}{{- $count = add $count 1 -}}{{- end -}}
+{{- end -}}
+{{- $show := gt $count 1 -}}
+{{- with .Params.toc -}}{{- $show = gt $count 0 -}}{{- end -}}
+{{- if eq .Params.toc false -}}{{- $show = false -}}{{- end -}}
+
+{{- if and $show $headings -}}
+<nav class="post-toc not-prose" aria-label="Table of contents">
+  <p class="post-toc-title">Contents</p>
+  {{- partial "toc-list.html" (dict "headings" $headings "depth" 1) -}}
+</nav>
+{{- end -}}

@@ -1,0 +1,14 @@
+{{- /* Drops synthetic placeholder nodes (a page whose first heading is deeper
+       than the top level gets an empty parent) and lifts their children up.
+       Context: a slice of headings. Returns a slice of headings. */ -}}
+{{- $out := slice -}}
+{{- range . -}}
+{{- if .ID -}}
+{{- $out = $out | append . -}}
+{{- else -}}
+{{- range partial "toc-hoist.html" .Headings -}}
+{{- $out = $out | append . -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- return $out -}}

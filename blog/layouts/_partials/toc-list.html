@@ -1,0 +1,12 @@
+{{- /* Recursive list for toc.html. Context: {headings, depth}. Nests 2 levels. */ -}}
+{{- $depth := .depth -}}
+<ul>
+  {{- range partial "toc-hoist.html" .headings -}}
+  <li>
+    <a href="#{{- .ID -}}">{{- .Title | safeHTML -}}</a>
+    {{- if and .Headings (lt $depth 2) -}}
+    {{- partial "toc-list.html" (dict "headings" .Headings "depth" (add $depth 1)) -}}
+    {{- end -}}
+  </li>
+  {{- end -}}
+</ul>
