@@ -95,4 +95,13 @@
     </nav>
     {{- end -}}<!---->
   </div>
+
+  <!-- Cloudflare Web Analytics (same property as the main site) -->
+  {{- if hugo.IsProduction -}}
+  <script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "8e3ca4508c444f3b8c29a353c21806e4"}'
+  ></script>
+  {{- end -}}
 </header>
