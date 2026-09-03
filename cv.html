@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saheb Motiani - CV</title>
+    <meta name="description"
+        content="Saheb Motiani builds RL systems to study training dynamics and generalization, drawing on a decade of production distributed systems experience at Meta, Disney Streaming and Babylon Health.">
+    <link rel="canonical" href="https://saheb.github.io/cv.html">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Saheb Motiani - CV">
+    <meta property="og:description"
+        content="RL systems for training dynamics and generalization, on a decade of production distributed systems at Meta, Disney Streaming and Babylon Health.">
+    <meta property="og:url" content="https://saheb.github.io/cv.html">
+    <meta property="og:image" content="https://saheb.github.io/saheb-circle.png">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Saheb Motiani",
+      "url": "https://saheb.github.io/",
+      "email": "mailto:saheb210692@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB" },
+      "sameAs": [
+        "https://linkedin.com/in/sahebmotiani",
+        "https://github.com/Saheb"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Dhirubhai Ambani University (formerly DA-IICT)"
+      }
+    }
+    </script>
     <link rel="icon" type="image/png" href="/saheb-circle.png">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <style>
@@ -40,7 +70,7 @@
 
         .resume-section h2 {
             font-size: 26px;
-            color: #007bff;
+            color: #0069d9;
             border-bottom: 2px solid #eaeaea;
             padding-bottom: 5px;
             margin-bottom: 20px;
@@ -74,7 +104,7 @@
 
         .job-date {
             font-size: 18px;
-            color: #888;
+            color: #666;
         }
 
         .resume-list {
@@ -95,8 +125,43 @@
             margin-bottom: 40px;
         }
 
+        .resume-sublist {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            padding-left: 20px;
+            list-style-type: circle;
+        }
+
+        .resume-sublist li {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .resume-cert-list {
+            margin-bottom: 25px;
+        }
+
+        .resume-outro {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        /* Links in running prose need a non-colour cue (WCAG 1.4.1) */
+        .resume-list a,
+        .resume-intro a {
+            text-decoration: underline;
+        }
+
+        .download-btn:focus-visible {
+            outline: 2px solid #0069d9;
+            outline-offset: 2px;
+        }
+
         /* Mobile adjust */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 600px) {
             .job-header {
                 flex-direction: column;
             }
@@ -112,7 +177,7 @@
             top: 20px;
             right: 20px;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #0069d9;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -168,13 +233,9 @@
 
             a {
                 text-decoration: underline !important;
-                color: #007bff !important;
+                color: #0069d9 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-            }
-
-            .resume-header h1 {
-                color: #000 !important;
             }
 
             .resume-header {
@@ -182,6 +243,7 @@
             }
 
             .resume-header h1 {
+                color: #000 !important;
                 font-size: 22px;
                 margin-bottom: 2px;
             }
@@ -214,7 +276,7 @@
                 margin-bottom: 4px;
             }
 
-            .resume-list li li {
+            .resume-sublist li {
                 font-size: 11.5px !important;
                 margin-bottom: 3px !important;
             }
@@ -254,59 +316,58 @@
 </head>
 
 <body>
-    <div class="container resume-container">
-        <div class="resume-header">
+    <main class="container resume-container">
+        <header class="resume-header">
             <h1>Saheb Motiani</h1>
-            <p>London, UK | saheb210692@gmail.com</p>
-            <p><a href="https://linkedin.com/in/sahebmotiani" target="_blank">LinkedIn</a> | <a
-                    href="https://github.com/saheb" target="_blank">Github</a> | <a href="/"
-                    target="_parent">Website</a></p>
-            <button onclick="window.print()" class="download-btn">Print / Save as PDF</button>
-        </div>
+            <p>London, UK | <a href="mailto:saheb210692@gmail.com">saheb210692@gmail.com</a></p>
+            <p><a href="https://linkedin.com/in/sahebmotiani" target="_blank" rel="noopener">LinkedIn</a> | <a
+                    href="https://github.com/Saheb" target="_blank" rel="noopener">GitHub</a> | <a href="/">Website</a></p>
+            <button type="button" onclick="window.print()" class="download-btn">Print / Save as PDF</button>
+        </header>
 
         <div class="resume-intro">
             <p>I build RL systems to study training dynamics and generalization, drawing on a decade of experience building production distributed systems at Meta, Disney Streaming and Babylon Health.</p>
         </div>
 
-        <div class="resume-section">
+        <section class="resume-section">
             <h2>Side Projects</h2>
             <ul class="resume-list">
-                <li><strong>kaggle-orbit-wars:</strong> training a self-play RL agent for the Orbit Wars Kaggle
+                <li><strong>Orbit Wars RL Agent:</strong> a self-play RL agent for the Orbit Wars Kaggle
                     competition, a multiplayer planet-capture strategy game. (<a
-                        href="https://github.com/Saheb/kaggle-orbit-wars" target="_blank"
-                        style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built and trained an
+                        href="https://github.com/Saheb/kaggle-orbit-wars" target="_blank" rel="noopener"
+                       >View</a>)
+                    <ul class="resume-sublist">
+                        <li>Built and trained an
                             entity-transformer reinforcement learning agent
                             using PPO self-play on a custom GPU-vectorised PyTorch environment (~4k env
                             steps/sec on H100), trained from scratch with no imitation warm-start.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built the full training stack:
+                        <li>Built the full training stack:
                             opponent league with prioritised fictitious self-play (PFSP), KL-anchored self-play to
                             prevent policy collapse, action masking, reward shaping, and stratified 256-game
                             evaluation panels against calibrated leaderboard opponents.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Ran one-change-per-run controlled
+                        <li>Ran one-change-per-run controlled
                             experiments across GCP/JarvisLabs L4/H100 spot instances, profiled the loop end-to-end
                             (PPO-compute-bound, not env-bound), and diagnosed self-play pathologies such as unanchored
                             policy drift; from-scratch self-play reached 98% head-to-head against ~1200-rated planner
                             bots over 100M steps.</li>
                     </ul>
                 </li>
-                <li><strong>rl-snake:</strong> where the RL journey started: climbing the RL stack on Snake,
+                <li><strong>Snake RL:</strong> where the RL journey started: climbing the RL stack on Snake,
                     ending in a mechanistic study of board-size generalization; one agent trained only on small
                     boards plays 100×100 zero-shot. (<a href="https://saheb.github.io/rl-snake/"
-                        style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built a size-invariant agent
+                       >View</a>)
+                    <ul class="resume-sublist">
+                        <li>Built a size-invariant agent
                             (egocentric head-relative representation + attention pooling) trained on a curriculum of
                             small boards {10, 20} that navigates 100×100 grids zero-shot at 98% of moves toward the
                             goal, a 4.5× extrapolation with no degradation, where single-size agents are no better than
                             random by board 16.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Diagnosed the failure with linear
+                        <li>Diagnosed the failure with linear
                             probes: the direction-to-food signal was decodable but unused (its magnitude collapsed), and
                             probe-validated architecture fixes made real-play transfer worse. The true bottleneck was
                             state-distribution coverage, not architecture: 71–88% of big-board states are out-of-support
                             for a small-board policy.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Earlier phases climbed the RL
+                        <li>Earlier phases climbed the RL
                             stack from scratch (tabular/double Q-learning, REINFORCE, PPO, curriculum + imitation
                             learning, and an ICM curiosity ablation that helped PPO under sparse reward but not DQN),
                             and showed a from-pixels ConvNet beating a 24-feature hand-engineered DQN.</li>
@@ -314,94 +375,94 @@
                 </li>
                 <li><strong>tastebento.com:</strong> a social discovery app with a production LLM pipeline
                     generating grounded "Did You Know?" trivia from users' taste profiles. (<a
-                        href="https://tastebento.com" style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Designed a layered reward
+                        href="https://tastebento.com">View</a>)
+                    <ul class="resume-sublist">
+                        <li>Designed a layered reward
                             pipeline for LLM outputs: verifiable hard gates (claim grounding against retrieved
                             context, non-triviality vs user-visible fields, verbatim quiz answers) with soft quality
                             scores and a bounded LLM-judge tiebreak, so fluency can never outvote factuality.
                             Grading production outputs reframed the problem: 96% passed gates while 84% lacked
                             specificity, shifting optimization from hallucination to blandness.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Shipped best-of-N rejection
+                        <li>Shipped best-of-N rejection
                             sampling over Llama-3.3-70B (parallel high-temperature candidates, grader+judge pooled
                             selection, near-duplicate suppression); every production generation logs (context,
                             candidates, rewards) tuples, accumulating GRPO-ready training data as a side effect.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built an offline fact-mining
+                        <li>Built an offline fact-mining
                             worker: a free 8B model scans entire Wikipedia articles in the background and distills
                             trivia nuggets, each programmatically verified against its source passage
                             (extract-then-verify), moving read-time compute offline so serving prompts carry
                             distilled depth for the whole catalog within a fixed token budget.</li>
                     </ul>
                 </li>
-                <li><strong>rl-poker:</strong> replicating poker research to build state of the art poker agents (<a
-                        href="https://github.com/Saheb/rl-poker" target="_blank"
-                        style="text-decoration: none; color: #007bff;">View</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Built CFR and MCCFR blueprint
+                <li><strong>Poker RL:</strong> replicating poker research to build state of the art poker agents (<a
+                        href="https://github.com/Saheb/rl-poker" target="_blank" rel="noopener"
+                       >View</a>)
+                    <ul class="resume-sublist">
+                        <li>Built CFR and MCCFR blueprint
                             solvers for Leduc and No-Limit Hold'em, training 2B+ iterations against Slumbot with
                             vectorized Cython extensions achieving 180k it/s throughput.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Implemented Single Deep CFR with a
+                        <li>Implemented Single Deep CFR with a
                             custom RangeEncoder architecture (1326→64 bottleneck) for range-conditional postflop play,
                             integrating reach-weighted traversal sampling and composition-based synthetic range
                             injection.</li>
                     </ul>
                 </li>
-                <li><strong>content-moderation-env:</strong> a deterministic OpenEnv for evaluating AI agents on
+                <li><strong>Content Moderation OpenEnv:</strong> a deterministic environment for evaluating AI agents on
                     user-generated content moderation, built for the Meta PyTorch OpenEnv Hackathon. (<a
-                        href="https://github.com/Saheb/content-moderation-env" target="_blank"
-                        style="text-decoration: none; color: #007bff;">View</a> | <a
+                        href="https://github.com/Saheb/content-moderation-env" target="_blank" rel="noopener"
+                       >View</a> | <a
                         href="https://saheb-content-moderation-env.hf.space"
-                        style="text-decoration: none; color: #007bff;">Demo</a>)
-                    <ul style="margin-top: 6px; margin-bottom: 6px; padding-left: 20px; list-style-type: circle;">
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Simulates the sequential trust
-                            & safety review workflow (read a post, gather thread context, apply a policy, issue a
+                       >Demo</a>)
+                    <ul class="resume-sublist">
+                        <li>Simulates the sequential trust
+                            &amp; safety review workflow (read a post, gather thread context, apply a policy, issue a
                             decision) across four graded task packs, with deterministic graders and dense reward
                             shaping: over-censorship penalties, policy-citation bonuses, and deductions for
                             skipping context on context-critical posts.</li>
-                        <li style="font-size: 17px; color: #555; margin-bottom: 6px;">Benchmarked frontier LLMs on
+                        <li>Benchmarked frontier LLMs on
                             it: models converge on accuracy (~0.82 on the hard pack) but diverge widely on shaped
                             reward (−0.93 to +6.39), separating genuine policy reasoning from correct guessing;
                             live demo and benchmark hosted on Hugging Face Spaces.</li>
                     </ul>
                 </li>
             </ul>
-        </div>
+        </section>
 
-        <div class="resume-section">
+        <section class="resume-section">
             <h2>Experience</h2>
 
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
                     <h3 class="job-title">Machine Learning Sabbatical</h3>
-                    <span class="job-date">Aug 2025 – Present</span>
+                    <span class="job-date"><time datetime="2025-08">Aug 2025</time> – Present</span>
                 </div>
                 <ul class="resume-list">
-                    <li>Spent a year building reinforcement learning systems from scratch and running end-to-end
+                    <li>Building reinforcement learning systems from scratch and running end-to-end
                         experiments across multiple environments to understand training dynamics, exploration, and
                         generalization.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
-                    <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Meta </span>
+                    <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Meta</span>
                     </h3>
-                    <span class="job-date">Jan 2024 - May 2025</span>
+                    <span class="job-date"><time datetime="2024-01">Jan 2024</time> – <time datetime="2025-05">May 2025</time></span>
                 </div>
                 <ul class="resume-list">
                     <li>Unblocked $7.7M in revenue (154% of target) by delivering a feature enabling non-admin users to
                         appeal ad account integrity enforcements for high-value (Silver+) advertisers.</li>
                     <li>Resolved a critical concurrency bug causing notification delivery failures, and drove proactive
                         engineering initiatives to improve system reliability and overall operational excellence.</li>
-                    <li>Drove unification of Propagated Enforcements across Paid and Organic channels. </li>
+                    <li>Drove unification of Propagated Enforcements across Paid and Organic channels.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
                     <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Babylon Health</span>
                     </h3>
-                    <span class="job-date">Aug 2019 - Oct 2023</span>
+                    <span class="job-date"><time datetime="2019-08">Aug 2019</time> – <time datetime="2023-10">Oct 2023</time></span>
                 </div>
                 <ul class="resume-list">
                     <li>Led a small cross-functional team exploring a new delivery model for the Applied Science
@@ -411,72 +472,66 @@
                     </li>
                     <li>Architected HealthIQ – a bespoke pattern for <b>productionizing ML models</b> generating risk
                         predictions using Faust-based serverless functions. Model output powered internal products such
-                        as Outreach Tracker & Clinical Portals. (Python)</li>
-                    <li>Developed Flowbase – an arsenal of tools & services for chatbot flow platform enabling the
-                        execution of Healthcheck & Symptom Checker products. (Scala)</li>
+                        as Outreach Tracker &amp; Clinical Portals. (Python)</li>
+                    <li>Developed Flowbase – an arsenal of tools &amp; services for chatbot flow platform enabling the
+                        execution of Healthcheck &amp; Symptom Checker products. (Scala)</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
                     <h3 class="job-title">Senior Software Engineer <span class="job-company">@ Disney Streaming
                             Services</span></h3>
-                    <span class="job-date">Aug 2017 – June 2019</span>
+                    <span class="job-date"><time datetime="2017-08">Aug 2017</time> – <time datetime="2019-06">Jun 2019</time></span>
                 </div>
                 <ul class="resume-list">
                     <li>Designed and developed Media Analysis Services (MAS) - a distributed microsystem that ensures
                         the accuracy of incoming media files prior to transcoding and packaging. Utilized on-premises
                         services and AWS for asynchronous communication via Kafka.</li>
-                    <li>Lead a squad of three-four members for three-four months.</li>
+                    <li>Led a squad of three-four members for three-four months.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
                     <h3 class="job-title">Software Engineer <span class="job-company">@ Cake Solutions (acquired by
                             Disney)</span></h3>
-                    <span class="job-date">Nov 2016 – Aug 2017</span>
+                    <span class="job-date"><time datetime="2016-11">Nov 2016</time> – <time datetime="2017-08">Aug 2017</time></span>
                 </div>
                 <ul class="resume-list">
                     <li>Broadcast Control Plane (BCP): Automates the media acquisition process of associating source and
                         media exchange pipelines for the live media productions for ESPN+ and MLB.TV, powered by the
                         BamTech platform.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
                     <h3 class="job-title">Senior Associate <span class="job-company">@ Morgan Stanley</span></h3>
-                    <span class="job-date">Aug 2014 – July 2016</span>
+                    <span class="job-date"><time datetime="2014-08">Aug 2014</time> – <time datetime="2016-07">Jul 2016</time></span>
                 </div>
                 <ul class="resume-list">
                     <li>Developed a framework for sending and receiving SMS messages to/from handsets, with integrations
                         to 3rd party SMS aggregators such as Nexmo and Twilio.</li>
                 </ul>
-            </div>
-        </div>
+            </article>
+        </section>
 
-        <div class="resume-section">
+        <section class="resume-section">
             <h2>Skills</h2>
             <ul class="resume-list">
-                <li>Python, PyTorch, Jax, NumPy, Scala, Kafka, AWS, GCP, SQL, Java, TypeScript, React, Flink, GraphQL,
-                    Kubernetes</li>
+                <li><strong>ML:</strong> Python, PyTorch, JAX, NumPy</li>
+                <li><strong>Data &amp; infrastructure:</strong> Kafka, Flink, AWS, GCP, Kubernetes, SQL</li>
+                <li><strong>Languages &amp; web:</strong> Scala, Java, TypeScript, React, GraphQL</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="resume-section">
+        <section class="resume-section">
             <h2>Education</h2>
-            <ul class="resume-list resume-cert-list" style="margin-bottom: 25px;">
-                <li><a href="https://www.coursera.org/account/accomplishments/verify/M2UBXKQ9LKPP">Finding Hidden
-                        Messages in DNA (Bioinformatics I) by University of California San Diego (Jan
-                        2026)</a></li>
-                <li><a href="https://www.coursera.org/account/accomplishments/certificate/7FQMGCBC35WT">Neural Networks
-                        and Deep Learning by DeepLearning.AI (May 2023)</a></li>
-            </ul>
-            <div class="job">
+            <article class="job">
                 <div class="job-header">
-                    <h3 class="job-title">Dhirubhai Ambani University (DAU)</h3>
-                    <span class="job-date">Class of 2014</span>
+                    <h3 class="job-title">Dhirubhai Ambani University (formerly DA-IICT)</h3>
+                    <span class="job-date">Class of <time datetime="2014">2014</time></span>
                 </div>
                 <ul class="resume-list">
                     <li>Bachelor of Technology, Information and Communication Technology.</li>
@@ -487,14 +542,21 @@
                     <li><strong>ASCEND (Google Summer of Code 2012)</strong> - Custom Icons for Canvas Based Modeler
                     </li>
                 </ul>
-            </div>
-        </div>
+            </article>
+            <ul class="resume-list resume-cert-list">
+                <li><a href="https://www.coursera.org/account/accomplishments/verify/M2UBXKQ9LKPP">Finding Hidden
+                        Messages in DNA (Bioinformatics I) by University of California San Diego (Jan
+                        2026)</a></li>
+                <li><a href="https://www.coursera.org/account/accomplishments/certificate/7FQMGCBC35WT">Neural Networks
+                        and Deep Learning by DeepLearning.AI (May 2023)</a></li>
+            </ul>
+        </section>
 
-        <p class="resume-outro" style="text-align: center; color: #888; font-style: italic; margin-top: 50px;">
+        <p class="resume-outro">
             Outside work I enjoy reading, writing, hiking, skiing, playing tennis and poker.
         </p>
 
-    </div>
+    </main>
 </body>
 
 </html>

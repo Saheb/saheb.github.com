@@ -11,12 +11,20 @@ body {
 
 a {
     text-decoration: none;
-    color: #007bff;
+    color: #0069d9;
     /* Standard link color, can be adjusted */
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Visible keyboard focus (WCAG 2.4.7) */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #0069d9;
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 ul {
@@ -167,7 +175,7 @@ p {
     display: block;
     margin-top: 10px;
     font-weight: bold;
-    color: #007bff;
+    color: #0069d9;
 }
 
 /* App Layout Styles */
@@ -241,7 +249,7 @@ p {
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 15px;
-    color: #007bff;
+    color: #0069d9;
     transition: color 0.2s, transform 0.2s;
 }
 
@@ -253,7 +261,7 @@ p {
 
 .active-link {
     font-weight: bold !important;
-    border-left: 3px solid #007bff;
+    border-left: 3px solid #0069d9;
     padding-left: 10px;
     margin-left: -13px;
     text-decoration: none !important;
