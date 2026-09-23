@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,88 +8,310 @@
     <link rel="icon" type="image/png" href="/saheb-circle.png">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <style>
-        /* Specific override for centering */
-        .project-list {
+        .projects-page {
+            max-width: 1080px;
+            padding-top: 56px;
+            padding-bottom: 64px;
+            text-align: left;
+        }
+
+        .projects-header {
+            max-width: 700px;
+            margin-bottom: 36px;
+        }
+
+        .projects-header h1 {
+            margin: 0 0 8px;
+            color: #222;
+            font-size: 42px;
+            line-height: 1.15;
+        }
+
+        .projects-header p {
+            margin: 0;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .featured-project {
             display: flex;
             flex-direction: column;
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-visual {
+            display: block;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: #090909;
+        }
+
+        .project-visual img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-visual img.contain {
+            object-fit: contain;
+        }
+
+        .project-copy {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 22px;
+        }
+
+        .project-copy h2 {
+            margin: 0 0 7px;
+            color: #222;
+            font-size: 26px;
+            line-height: 1.2;
+        }
+
+        .project-copy p {
+            margin: 0 0 20px;
+            color: #555;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .project-link {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            min-height: 80vh;
+            min-height: 38px;
+            padding: 0 14px;
+            border: 1px solid #d7d7d7;
+            border-radius: 8px;
+            color: #333;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .project-link.primary {
+            border-color: #0069d9;
+            background: #0069d9;
+            color: #fff;
+        }
+
+        .project-link:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .other-projects {
+            margin-top: 58px;
+        }
+
+        .other-projects h2 {
+            margin: 0 0 20px;
+            color: #444;
+            font-size: 28px;
+        }
+
+        .other-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 36px;
+        }
+
+        .other-project {
+            padding: 18px 0;
+            border-top: 1px solid #e7e7e7;
+        }
+
+        .other-project h3 {
+            margin: 0 0 3px;
+            color: #222;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .other-project p {
+            margin: 0 0 6px;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        .other-project a {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .projects-archive {
+            margin-top: 32px;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        @media (max-width: 720px) {
+            .projects-page {
+                padding-top: 30px;
+                padding-bottom: 40px;
+            }
+
+            .projects-header h1 {
+                font-size: 34px;
+            }
+
+            .featured-grid,
+            .other-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                gap: 20px;
+            }
+
+            .other-projects {
+                margin-top: 44px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container project-list" style="justify-content: flex-start; padding-top: 50px; padding-bottom: 50px;">
-        <div style="max-width: 600px; text-align: left;">
-            
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/kaggle-orbit-wars" target="_blank" style="font-size: 24px; font-weight: bold;"> orbit-wars </a>
-                <br>
-                <span>A self-play RL agent for the Orbit Wars Kaggle competition</span>
-            </p>
-            
-            <p style="margin-bottom: 30px;">
-                <a href="https://saheb.github.io/rl-snake/" style="font-size: 24px; font-weight: bold;"> rl-snake </a>
-                <br>
-                <span>applying reinforcement learning to the game of snake</span>
-            </p>
+    <main class="container projects-page">
+        <header class="projects-header">
+            <h1>Selected projects</h1>
+            <p>Reinforcement learning systems, research implementations, and products I've built.</p>
+        </header>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/rl-poker" target="_blank" style="font-size: 24px; font-weight: bold;"> rl-poker </a>
-                <br>
-                <span>replicate poker research to build state of the art poker agents</span>
-            </p>
+        <section class="featured-grid" aria-label="Selected projects">
+            <article class="featured-project">
+                <a class="project-visual" href="/project-viewer.html?project=orbit-wars"
+                    aria-label="Watch the Orbit Wars replay">
+                    <img class="contain" src="/project-assets/orbit-wars.gif"
+                        alt="Orbit Wars fleets moving between planets during a match">
+                </a>
+                <div class="project-copy">
+                    <h2>Orbit Wars</h2>
+                    <p>A self-play RL agent for the Orbit Wars Kaggle competition.</p>
+                    <div class="project-links">
+                        <a class="project-link primary" href="https://github.com/Saheb/kaggle-orbit-wars"
+                            target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a class="project-link" href="/project-viewer.html?project=orbit-wars">Interactive replay</a>
+                    </div>
+                </div>
+            </article>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://tastebento.com" style="font-size: 24px; font-weight: bold;"> tastebento.com </a> <br>
-                <span>Your taste profile, served in a bento box. A social discovery app to discover "Taste
-                    Twins."</span>
-            </p>
+            <article class="featured-project">
+                <a class="project-visual" href="/project-viewer.html?project=rl-snake"
+                    aria-label="Open the RL Snake live demo">
+                    <img src="/project-assets/rl-snake.webp" alt="RL Snake agent playing on a 10 by 10 board">
+                </a>
+                <div class="project-copy">
+                    <h2>RL Snake</h2>
+                    <p>Applying reinforcement learning to the game of Snake.</p>
+                    <div class="project-links">
+                        <a class="project-link primary" href="/project-viewer.html?project=rl-snake">Live demo</a>
+                        <a class="project-link" href="https://github.com/Saheb/rl-snake" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </article>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/content-moderation-env" target="_blank" style="font-size: 24px; font-weight: bold;">
-                    Content Moderation Env </a> <br>
-                <span>OpenEnv for user-generated content (UGC) moderation</span>
-            </p>
+            <article class="featured-project">
+                <a class="project-visual" href="https://github.com/Saheb/rl-poker" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open RL Poker on GitHub">
+                    <img src="/project-assets/rl-poker.svg"
+                        alt="CFR blueprint and real-time endgame solver architecture for a poker agent">
+                </a>
+                <div class="project-copy">
+                    <h2>RL Poker</h2>
+                    <p>Replicating poker research to build state-of-the-art poker agents.</p>
+                    <div class="project-links">
+                        <a class="project-link primary" href="https://github.com/Saheb/rl-poker" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </article>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/rl-notebooks" target="_blank"
-                    style="font-size: 24px; font-weight: bold;"> rl-notebooks </a> <br>
-                <span>A 17-notebook journey through Reinforcement Learning — from Bellman to AlphaZero to RLHF.</span>
-            </p>
+            <article class="featured-project">
+                <a class="project-visual" href="/project-viewer.html?project=tastebento"
+                    aria-label="Open the TasteBento live app">
+                    <img src="/project-assets/tastebento.png" alt="TasteBento login page and product overview">
+                </a>
+                <div class="project-copy">
+                    <h2>TasteBento</h2>
+                    <p>Your taste profile, served in a bento box. A social discovery app for finding taste twins.</p>
+                    <div class="project-links">
+                        <a class="project-link primary" href="/project-viewer.html?project=tastebento">Live app</a>
+                    </div>
+                </div>
+            </article>
+        </section>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/pick-pocket" target="_blank"
-                    style="font-size: 24px; font-weight: bold;"> pick-pocket </a> <br>
-                <span>minimal web clipper with source tracing</span>
-            </p>
+        <section class="other-projects" aria-labelledby="other-projects-heading">
+            <h2 id="other-projects-heading">Other projects</h2>
+            <div class="other-grid">
+                <article class="other-project">
+                    <h3>Content Moderation Env</h3>
+                    <p>OpenEnv for user-generated content moderation.</p>
+                    <a href="https://github.com/Saheb/content-moderation-env" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </article>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/nutrient-risk-profiler" target="_blank"
-                    style="font-size: 24px; font-weight: bold;"> nutrient-risk-profiler </a> <br>
-                <span>An application to check the risk profile of food items, inspired by Yuka.</span>
-            </p>
+                <article class="other-project">
+                    <h3>RL Notebooks</h3>
+                    <p>A 17-notebook journey from Bellman equations to AlphaZero and RLHF.</p>
+                    <a href="https://github.com/Saheb/rl-notebooks" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </article>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/health-metrics-local-extractor" target="_blank"
-                    style="font-size: 24px; font-weight: bold;"> health-metrics-local-extractor </a> <br>
-                <span>A private, offline-first web application that extracts health metrics from PDF medical reports
-                    using a local LLM</span>
-            </p>
+                <article class="other-project">
+                    <h3>Pick Pocket</h3>
+                    <p>A minimal web clipper with source tracing.</p>
+                    <a href="https://github.com/Saheb/pick-pocket" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </article>
 
-            <p style="margin-bottom: 30px;">
-                <a href="https://github.com/Saheb/x-bookmark-manager" target="_blank"
-                    style="font-size: 24px; font-weight: bold;"> x-bookmark-manager </a> <br>
-                <span>A chrome extension that allows you to sync x bookmarks to local chrome db, and manage them
-                    offline</span>
-            </p>
+                <article class="other-project">
+                    <h3>Nutrient Risk Profiler</h3>
+                    <p>An application for checking the risk profile of food items, inspired by Yuka.</p>
+                    <a href="https://github.com/Saheb/nutrient-risk-profiler" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </article>
 
-            <br />
-            <a href="/college_projects" style="color: #666; font-style: italic;"> Ancient / College Projects (before
-                2014) </a>
-        </div>
-    </div>
+                <article class="other-project">
+                    <h3>Health Metrics Local Extractor</h3>
+                    <p>An offline-first app that extracts health metrics from medical PDFs using a local LLM.</p>
+                    <a href="https://github.com/Saheb/health-metrics-local-extractor" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </article>
+
+                <article class="other-project">
+                    <h3>X Bookmark Manager</h3>
+                    <p>A Chrome extension for syncing and managing X bookmarks offline.</p>
+                    <a href="https://github.com/Saheb/x-bookmark-manager" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </article>
+            </div>
+        </section>
+
+        <p class="projects-archive"><a href="/college_projects">Ancient / college projects (before 2014)</a></p>
+    </main>
 </body>
 
 </html>
