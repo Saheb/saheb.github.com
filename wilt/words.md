@@ -5,6 +5,9 @@
 Meaning. Where I found it / example sentence.
 -->
 
+## Straggler problem
+In synchronous distributed work, every step waits for the slowest worker, so one slow GPU, node or data loader sets the pace and drags down utilization across the whole job.
+
 ## Linear mode connectivity (LMC)
 Two trained networks are linearly mode-connected if every blend of their weights on the straight line between them performs about as well as the two endpoints. It holds reliably for networks that share a starting point, such as fine-tunes of the same base model. That is why weight averaging and model merging work.
 
