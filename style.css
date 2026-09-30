@@ -300,3 +300,44 @@ p {
 .sidebar-blogs {
     margin: 16px 0 0;
 }
+
+/* Quotes: serif text with the attribution on its own line. */
+.quotes-page {
+    max-width: 720px;
+    text-align: left;
+}
+
+.quotes-page h2 {
+    text-align: center;
+}
+
+.quote {
+    margin: 0;
+    padding: 0;
+}
+
+.quote + .quote {
+    margin-top: 4px;
+    border-top: 1px solid #e8e4de;
+    padding-top: 3px;
+}
+
+.quote blockquote {
+    margin: 0;
+}
+
+.quote blockquote p {
+    margin: 0;
+    font-family: Georgia, "Palatino Linotype", Palatino, serif;
+    font-size: clamp(20px, 2vw, 24px);
+    line-height: 1.55;
+    color: #292929;
+}
+
+.quote figcaption {
+    margin-top: 4px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #777;
+}

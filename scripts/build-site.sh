@@ -41,6 +41,15 @@ for html_source in "$SITE_ROOT"/*.html; do
     cp "$html_source" "$BUILD_DIR/"
 done
 
+# Provide directory routes for the shorter Quotes and Books URLs.
+for page in quotes books 100dreams; do
+    mkdir -p "$BUILD_DIR/$page"
+    cp "$SITE_ROOT/$page.html" "$BUILD_DIR/$page/index.html"
+done
+
+mkdir -p "$BUILD_DIR/travelmap"
+cp "$SITE_ROOT/travelMap.html" "$BUILD_DIR/travelmap/index.html"
+
 if [[ -d "$SITE_ROOT/project-assets" ]]; then
     cp -R "$SITE_ROOT/project-assets" "$BUILD_DIR/"
 fi

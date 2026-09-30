@@ -39,6 +39,13 @@ jobs:
             esac
             cp -r "$f" "deploy/$f"
           done
+          # Provide the same short page routes as the local build.
+          for page in quotes books 100dreams; do
+            mkdir -p "deploy/$page"
+            cp "$page.html" "deploy/$page/index.html"
+          done
+          mkdir -p deploy/travelmap
+          cp travelMap.html deploy/travelmap/index.html
           # Build Hugo blog into deploy/blog/
           cd blog
           hugo --destination ../deploy/blog
