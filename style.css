@@ -194,6 +194,7 @@ p {
 }
 
 .sidebar-content {
+    min-height: 0;
     text-align: left;
     margin: 0;
     max-width: none;
@@ -203,6 +204,9 @@ p {
 }
 
 .sidebar-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
     padding: 12px 30px 40px 30px; /* Reduced top padding to 12px, kept bottom at 40px */
     border-top: 1px solid #f0f0f0;
     background: #fff;
@@ -246,7 +250,7 @@ p {
 /* Subpage Links Aesthetic */
 .sidebar-content a[target="content-frame"] {
     display: inline-block;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 15px;
     color: #0069d9;
@@ -292,4 +296,7 @@ p {
     .content-area.active {
         display: block;
     }
+}
+.sidebar-blogs {
+    margin: 16px 0 0;
 }

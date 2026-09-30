@@ -20,7 +20,7 @@ mkdir -p "$BUILD_DIR"
 
 while IFS= read -r -d '' relative_path; do
     case "$relative_path" in
-        .github/* | blog/* | deploy/* | _site/*)
+        .github/* | blog/* | research/* | deploy/* | _site/*)
             continue
             ;;
     esac
@@ -51,6 +51,11 @@ hugo \
     --source "$SITE_ROOT/blog" \
     --destination "$BUILD_DIR/blog" \
     --baseURL "${LOCAL_BASE_URL%/}/blog/"
+# Research uses the same theme with its own content and URL space.
+hugo \
+    --source "$SITE_ROOT/research" \
+    --destination "$BUILD_DIR/research" \
+    --baseURL "${LOCAL_BASE_URL%/}/research/"
 touch "$BUILD_DIR/.nojekyll"
 
 echo "Built full site at $BUILD_DIR"

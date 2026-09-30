@@ -5,6 +5,7 @@
     <h1 class="my-0! pb-2.5">{{- .Title -}}</h1>
 
     {{- if ne .Type "page" -}}
+    <div class="post-meta-row">
     <div class="text-xs antialiased opacity-60">
       {{- if .Date -}}
       <time>{{- .Date | time.Format ":date_medium" -}}</time>
@@ -16,6 +17,10 @@
       <span>{{- $single_author -}}</span>
       {{- end -}}
     </div>
+    {{- if site.Params.showListTags -}}
+    {{- partial "post-tags.html" . -}}
+    {{- end -}}
+    </div>
     {{- end -}}
   </header>
 
@@ -25,7 +30,7 @@
   <section>{{- .Content -}}</section>
 
   <!-- Post Tags -->
-  {{- if .Params.tags -}}
+  {{- if and .Params.tags (not site.Params.showListTags) -}}
   <footer class="mt-12 flex flex-wrap">
     {{- range .Params.tags -}} {{- $href := print (absURL "tags/") (urlize .)
     -}}

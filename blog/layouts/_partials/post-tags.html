@@ -1,0 +1,7 @@
+{{- with .GetTerms "tags" -}}
+<div class="post-meta-tags" aria-label="Post tags">
+  {{- range . -}}
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle | lower }}</a>
+  {{- end -}}
+</div>
+{{- end -}}

@@ -9,13 +9,13 @@ My personal website.
 - Python 3
 - [Hugo extended](https://gohugo.io/installation/): `brew install hugo`
 
-Ruby, Jekyll, and Bundle are not required. The root website is static HTML; only the blog is built by
+Ruby, Jekyll, and Bundle are not required. The root website is static HTML; the blog and research section are built by
 Hugo.
 
 ### Build and preview the full site
 
 The build script mirrors `.github/workflows/deploy.yml`: it copies the root static site into `_site/`,
-includes current root HTML pages and project assets, builds the Hugo blog into `_site/blog/`, and
+includes current root HTML pages and project assets, builds the Hugo blog into `_site/blog/` and research into `_site/research/`, and
 removes files left over from older builds. For local preview, Hugo generates blog asset and post URLs
 under `http://localhost:4000/blog/`.
 
@@ -34,7 +34,7 @@ SITE_BASE_URL=http://localhost:8080 bash scripts/build-site.sh
 python3 -m http.server 8080 --directory _site
 ```
 
-Run `bash scripts/build-site.sh` again after changing root files or blog content. The Python server can
+Run `bash scripts/build-site.sh` again after changing root files, blog content, or research content. The Python server can
 remain running while you rebuild. Root HTML files and files under `project-assets/` can be previewed
 before they are added to Git. Other new files must be added to Git before the script includes them.
 
@@ -53,3 +53,17 @@ The blog will be available at <http://localhost:1313>.
 cd /Users/saheb/home/saheb.github.com/blog
 hugo new content posts/my-post.md
 ```
+
+### Add a research post
+
+Add a Markdown file under `research/content/` with Hugo front matter:
+
+```yaml
+---
+title: "Research post title"
+date: 2026-09-30
+type: posts
+---
+```
+
+Run the full-site build to preview it at `/research/`.

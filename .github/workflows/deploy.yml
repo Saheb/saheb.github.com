@@ -35,7 +35,7 @@ jobs:
           # Copy all static files from root (excluding git, hugo, and deploy itself)
           for f in *; do
             case "$f" in
-              .git|blog|deploy|_site|.github) continue ;;
+              .git|blog|research|deploy|_site|.github) continue ;;
             esac
             cp -r "$f" "deploy/$f"
           done
@@ -43,6 +43,8 @@ jobs:
           cd blog
           hugo --destination ../deploy/blog
           cd ..
+          # Build the research section into deploy/research/
+          hugo --source research --destination ../deploy/research
           # Disable Jekyll processing on GitHub Pages
           touch deploy/.nojekyll
 
