@@ -46,7 +46,7 @@ It changed how the model judged the answer, but it did not change the answer. Th
 
 Next, I tested whether another triggering number like 404 used the same neurons.
 
-The neurons from 100 didn’t have the same effect on 404. But on repeating the same analysis on 404, I found similar early neurons that could be edited to reduce the rejections in the same way. That is to say, a different set of neurons, but the effects appear to converge on a similar set of later neurons that are involved in judging the answer. The specific intervention did not transfer to 404, but the broader structure did: different early neurons could influence a similar later neurons involved in judging the answer.
+The neurons from 100 didn’t have the same effect on 404. But on repeating the same analysis on 404, I found similar early neurons that could be edited to reduce the rejections in the same way. That is to say, a different set of neurons, but the effects appear to converge on a similar set of later neurons that are involved in judging the answer. The specific intervention did not transfer to 404, but the broader structure did: different early neurons could influence a similar set of later neurons involved in judging the answer.
 
 ## What remains unexplained?
 
