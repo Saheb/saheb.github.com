@@ -341,3 +341,59 @@ p {
     line-height: 1.5;
     color: #777;
 }
+
+.home-page {
+    background: #faf9f6;
+    color: #373b39;
+}
+
+.home-intro {
+    box-sizing: border-box;
+    max-width: 760px;
+    text-align: left;
+    padding: clamp(40px, 8vh, 96px) clamp(24px, 5vw, 64px);
+    font-family: Georgia, "Palatino Linotype", Palatino, serif;
+    font-size: clamp(18px, 1.6vw, 21px);
+    line-height: 1.75;
+}
+
+.home-intro p {
+    margin: 0 0 22px;
+}
+
+.home-intro .home-greeting {
+    margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 15px;
+    color: #727870;
+}
+
+.home-intro h1 {
+    margin: 0 0 28px;
+    color: #283e35;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.home-intro .home-lead {
+    font-size: clamp(21px, 2vw, 25px);
+    line-height: 1.5;
+    color: #283e35;
+}
+
+@media (max-width: 767px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .content-area.active {
+        display: block;
+        height: 75vh;
+        min-height: 520px;
+    }
+
+    .home-intro {
+        padding-top: 24px;
+    }
+}
