@@ -200,5 +200,4 @@ But no improvement on refusal and permission clarification with policy removed i
 
 So far we only have performed one trajectory per objective. The whole-completion training increased withholding relative to baseline, but we would need to run multiple matched runs with different seeds to establish reliable advantage over final-only loss.
 
-
-
+The code, experiments, and supporting results are available [on GitHub](https://github.com/Saheb/rlft).
