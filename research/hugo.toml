@@ -23,3 +23,9 @@ canonifyURLs = true
   [[module.mounts]]
     source = '../blog/assets'
     target = 'assets'
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [["$$", "$$"]]

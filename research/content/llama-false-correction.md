@@ -22,7 +22,7 @@ I first checked whether this failure was specific to this example or repeatable.
 
 I next tested whether the failure was specific to the number 100. It was much more common for answers of 100 and 1000 than for nearby controls, but several simple explanations failed: merely containing the token 100 was not sufficient, non-addition questions yielding 100 did not trigger it, and removing the + sign did not eliminate the effect.
 
-A broader search found similar failures for numbers such as 404, 666 and 999, while nearby controls rarely triggered them. This ruled out a simple “round numbers” explanation. But 200 was a useful counterexample: despite being a round number, it never triggered the failure in our tests.
+A broader search found similar failures for numbers such as 404, 666 and 999, while nearby controls rarely triggered them. This ruled out a simple “round numbers” explanation. But 200 was a useful counterexample: despite being a round number, it never triggered the failure in tests.
 
 ## Replacing internal activations
 
