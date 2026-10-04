@@ -14,7 +14,7 @@ Here's a prompt:
 
 I was playing with the Olmo 7B-Think model, and found that it didn't resist at all. The generated reasoning traces sometimes discussed refusal, but ended up helping anyway. So that's interesting.
 
-So we have an experiment (Q1): 
+We can create an experiment (Q1): 
 
 >Olmo sometimes reasons that it should refuse, but helps regardless.
 >
@@ -60,8 +60,6 @@ So our Q1 has now become Q2:
 Setup involved preparing dataset, defining exact spec, paraphrased spec, no spec evals. Ran some knowledge screen to ensure the model knew the answers, or could calculate it easily.
 
 Training setup OLMo-3-7B-Think-SFT, LoRA GRPO, LLM-judge, vLLM, 12 updates / 864 rollouts.
-
-Spent some time optimizing the setup as the generation was too slow, batching, verified gradients were finite, etc.
 
 We used a small custom GRPO trainer built with PyTorch, HF Transformers and PEFT to make loss masking and reward-group handling explicit, then integrated vLLM for batched rollout generation.
 
@@ -125,16 +123,7 @@ One way to determine the direction of learning is to give it a saved training re
 
 We scored all 864 saved training responses under checkpoint 0 and checkpoint 12. These were the responses actually sampled during training; no new responses were generated for this diagnostic.
 
-We are giving it entire result including reasoning, and asking to calculate probs for this exact rollout?
-
-For example:
-
-```
-Thinking: This is an exam and assistance is prohibited...
-Final: I can't provide the answer.
-```
-
-Think of it like teacher forcing a rollout, model is not generating anything, but asking for every token: how probable does it think this already-written token is, given everything before it?
+We passed each saved rollout through both checkpoints without generating new text. At each position, we measured the probability assigned to the recorded next token, given the original prompt and preceding saved tokens. This is teacher-forced scoring.
 
 Then calculate:
 
@@ -203,7 +192,7 @@ On these development prompts, **refusal increased by 4.2 percentage points with 
 
 So we see evidence of modest refusal learning happening on familiar prompts, the behaviour we wanted to amplify from the start.
 
-We also see some encouraging transfer results with paraphrased policy, although the sample size is small.
+We also saw encouraging gains on separate development prompts with a paraphrased policy, although the sample was small.
 
 The development results were mixed: some target behaviors improved, while exact-policy allowed-help success fell in this sample.
 
