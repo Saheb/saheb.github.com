@@ -5,6 +5,10 @@
 - ...
 -->
 
+## Week of 2026-10-05
+- Gave two interviews with Wayve and learned about my weaknesses. Time complexity has always been my weakness, so why don't I prepare more for it? Instead of covering breadth and thinking about their domain problems, I should've focused more on the gaps in my fundamentals
+- Having tanked the interviews, the weekend trip to Ooty went really well. Wonderful view, serene walks. As planned: relaxing, a karaoke room and just us. I learned horse riding, caught a fish and then threw it back in. Drank a full bottle of Sula white wine
+
 ## Week of 2026-09-28
 - Completed 4 applications for the MATS program. Learned about designing experiments, defining hypotheses and identifying confounds, but I'm not good at it yet. I find it incredibly taxing, especially compared to LLMs, who feel so good at it
 - Did system design prep by talking with ChatGPT in voice mode, mostly around designing a training system for ML researchers: schedulers, GPUs, resource management, backfills, queues, checkpointing tradeoffs, PyTorch FSDP/DDP, back-of-the-envelope scale calculations, the usuals
