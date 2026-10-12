@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${TITLE}</title>
+    <meta name="description" content="${DESCRIPTION}">
+    <meta name="robots" content="${ROBOTS}">
+    <link rel="canonical" href="${CANONICAL_URL}">
+    <link rel="icon" href="/saheb-circle.png">
+    <style>
+        :root { color-scheme: light; --ink: #1d2935; --muted: #546271; --accent: #24564e; --line: #d9e1e4; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #eef1f3; color: var(--ink); font: 16px/1.48 Arial, Helvetica, sans-serif; }
+        a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+        .toolbar { max-width: 900px; margin: 20px auto 0; padding: 0 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+        .toolbar p { margin: 0; color: var(--muted); font-size: 14px; }
+        .cv-modes { display: flex; flex-basis: 100%; gap: 8px; }
+        .cv-modes a { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: white; color: var(--ink); font-size: 14px; line-height: 1.25; text-align: center; text-decoration: none; }
+        .cv-modes a:hover { border-color: var(--accent); }
+        .cv-modes a[aria-current="page"] { border-color: var(--accent); background: var(--accent); color: white; }
+        button { border: 0; border-radius: 4px; padding: 10px 15px; background: var(--accent); color: white; font: inherit; font-size: 14px; cursor: pointer; }
+        main { max-width: 900px; margin: 20px auto 36px; }
+        .cv-page { padding: 42px 48px; background: white; box-shadow: 0 2px 12px #1d293510; }
+        .cv-page + .cv-page { margin-top: 20px; }
+        h1 { margin: 0 0 5px; font-size: 34px; line-height: 1.15; letter-spacing: -.6px; }
+        .focus { margin: 0 0 10px; font-size: 16px; color: var(--accent); font-weight: 700; }
+        .contact { margin: 0; font-size: 14px; color: var(--muted); }
+        .contact a { white-space: nowrap; }
+        .summary { margin: 18px 0 0; }
+        section { margin-top: 24px; }
+        h2 { margin: 0 0 12px; padding-bottom: 5px; border-bottom: 1px solid var(--line); font-size: 17px; line-height: 1.25; color: var(--accent); }
+        .section-context { margin: -5px 0 13px; color: var(--muted); font-size: 13px; }
+        article + article { margin-top: 17px; }
+        h3 { margin: 0; font-size: 16px; line-height: 1.35; }
+        .entry-links { margin: 3px 0 6px; font-size: 13px; }
+        ul { margin: 6px 0 0; padding-left: 19px; }
+        li { margin-bottom: 6px; }
+        li:last-child { margin-bottom: 0; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+        .date { white-space: nowrap; color: var(--muted); font-size: 13px; }
+        .continuation { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 14px; }
+        .continuation span { color: var(--muted); font-size: 12px; }
+        .earlier { margin: 14px 0 0; }
+        .earlier p { margin: 8px 0 0; }
+        .compact p { margin: 6px 0 0; }
+        .page-number { display: none; }
+        @media screen and (max-width: 650px) {
+            .toolbar { margin-top: 14px; padding: 0 18px; flex-wrap: wrap; }
+            main { margin-top: 14px; }
+            .cv-page { padding: 28px 22px; }
+            h1 { font-size: 29px; }
+            .job-header { flex-direction: column; gap: 2px; }
+            .continuation { flex-wrap: wrap; gap: 4px; }
+            .contact { line-height: 1.8; }
+        }
+        @media print {
+            @page { size: A4; margin: 12mm 16mm; }
+            body { background: white; font-size: 10.3pt; line-height: 1.30; }
+            main { max-width: none; margin: 0; }
+            .toolbar { display: none; }
+            .cv-page { padding: 0; box-shadow: none; position: relative; min-height: 272mm; }
+            .cv-page + .cv-page { margin-top: 0; break-before: page; }
+            h1 { font-size: 25pt; margin-bottom: 3pt; }
+            .focus { font-size: 10.5pt; margin-bottom: 6pt; }
+            .contact { font-size: 9pt; }
+            .summary { margin-top: 10pt; }
+            section { margin-top: 10pt; }
+            h2 { font-size: 11.5pt; margin-bottom: 6pt; padding-bottom: 3pt; break-after: avoid; }
+            h3 { font-size: 10.5pt; break-after: avoid; }
+            .section-context { font-size: 9pt; margin: -2pt 0 8pt; }
+            .entry-links { font-size: 8.8pt; margin: 2pt 0 4pt; break-after: avoid; }
+            article { break-inside: avoid; }
+            article + article { margin-top: 7pt; }
+            ul { margin-top: 4pt; padding-left: 13pt; }
+            li { margin-bottom: 3pt; }
+            .date { font-size: 9pt; }
+            .job-header { break-after: avoid; }
+            .continuation { font-size: 10pt; padding-bottom: 7pt; }
+            .continuation span { font-size: 9pt; }
+            .earlier { margin-top: 9pt; }
+            .earlier p, .compact p { margin-top: 5pt; }
+            a { text-decoration-thickness: .5pt; }
+            .page-number { display: block; position: absolute; bottom: 0; right: 0; color: var(--muted); font-size: 8pt; margin: 0; }
+            .compact-print .summary { margin-top: 8pt; }
+            .compact-print section { margin-top: 6pt; }
+            .compact-print h2 { margin-bottom: 4pt; }
+            .compact-print article + article { margin-top: 5pt; }
+            .compact-print li { margin-bottom: 2pt; }
+            .compact-print li:last-child { margin-bottom: 0; }
+            .compact-print .section-context { margin-bottom: 6pt; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="${BODY_CLASS}">
+    <div class="toolbar">
+        <nav class="cv-modes" aria-label="CV version">
+${MODE_LINKS}
+        </nav>
+        <p><a href="./">Home</a> &middot; ${TOOLBAR}</p>
+        <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+    <main>
+${PAGES}
+    </main>
+</body>
+</html>
