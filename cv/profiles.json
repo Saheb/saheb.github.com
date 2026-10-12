@@ -1,0 +1,328 @@
+{
+  "research": {
+    "filename": "cv-research.html",
+    "title": "Saheb Motiani - Research Engineer CV",
+    "description": "LLM interpretability, RL fine-tuning, and training and evaluation systems, backed by over ten years of production engineering.",
+    "focus": "LLM interpretability, RL fine-tuning and ML systems",
+    "summary": "Software engineer with 10+ years building production distributed systems at Meta, Babylon Health and Disney Streaming. I study LLM behavior with controlled experiments and build training and evaluation systems.",
+    "toolbar": "Research Engineer CV – October 2026",
+    "pages": [
+      [
+        {
+          "id": "research-heading",
+          "title": "Selected Research",
+          "context": "career",
+          "entries": [
+            {
+              "entry": "llama",
+              "bullets": [
+                "intervention",
+                "controls",
+                "mechanism"
+              ]
+            },
+            {
+              "entry": "olmo",
+              "bullets": [
+                "trainer",
+                "saved-likelihood",
+                "fresh-behavior"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "experience-heading",
+          "title": "Professional Experience",
+          "entries": [
+            {
+              "entry": "meta",
+              "bullets": [
+                "notifications",
+                "experiments",
+                "reliability"
+              ]
+            },
+            {
+              "entry": "babylon",
+              "bullets": [
+                "model-deployment",
+                "flink",
+                "team"
+              ]
+            },
+            {
+              "entry": "disney",
+              "bullets": [
+                "media-validation"
+              ]
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "id": "earlier-heading",
+          "title": "Earlier Experience",
+          "block": "earlier"
+        },
+        {
+          "id": "systems-heading",
+          "title": "Selected ML Systems & Experiments",
+          "entries": [
+            {
+              "entry": "orbit",
+              "bullets": [
+                "training-system",
+                "evaluation",
+                "results"
+              ]
+            },
+            {
+              "entry": "snake",
+              "bullets": [
+                "generalization"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "skills-heading",
+          "title": "Technical Skills",
+          "compact": true,
+          "block": "skills"
+        },
+        {
+          "id": "education-heading",
+          "title": "Education & Open Source",
+          "compact": true,
+          "block": "education"
+        },
+        {
+          "id": "other-heading",
+          "title": "Other Selected Projects",
+          "compact": true,
+          "project_links": [
+            "tastebento",
+            "poker",
+            "openenv",
+            "jax"
+          ]
+        }
+      ]
+    ],
+    "pdf_filename": "Saheb-Motiani-Research-Engineer-CV.pdf",
+    "ml_skills_html": "<p><strong>ML and experiments:</strong> Python, PyTorch, JAX, NumPy, Transformers, PEFT/LoRA, vLLM; PPO, GRPO, self-play, activation patching, probing and controlled evaluation.</p>",
+    "label": "Research Engineer"
+  },
+  "mle": {
+    "filename": "cv-mle.html",
+    "title": "Saheb Motiani - ML Engineer CV",
+    "description": "LLM post-training, reward design and evaluation systems, backed by over ten years of production software engineering.",
+    "focus": "LLM post-training, reinforcement learning and evaluation systems",
+    "summary": "Software engineer with 10+ years building production distributed systems at Meta, Babylon Health and Disney Streaming. I build LLM post-training and evaluation pipelines, RL training systems and agent environments.",
+    "toolbar": "ML Engineer CV – October 2026",
+    "pages": [
+      [
+        {
+          "id": "ml-heading",
+          "title": "Selected ML Projects",
+          "context": "career",
+          "entries": [
+            {
+              "entry": "olmo",
+              "bullets": [
+                "trainer",
+                "fresh-behavior"
+              ],
+              "expanded_details": [
+                "reward"
+              ]
+            },
+            {
+              "entry": "tastebento",
+              "bullets": [
+                "graders",
+                "selection",
+                "audit"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "experience-heading",
+          "title": "Professional Experience",
+          "entries": [
+            {
+              "entry": "meta",
+              "bullets": [
+                "notifications",
+                "experiments",
+                "reliability"
+              ]
+            },
+            {
+              "entry": "babylon",
+              "bullets": [
+                "model-deployment",
+                "flink",
+                "team"
+              ]
+            },
+            {
+              "entry": "disney",
+              "bullets": [
+                "media-validation"
+              ]
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "id": "earlier-heading",
+          "title": "Earlier Experience",
+          "block": "earlier"
+        },
+        {
+          "id": "systems-heading",
+          "title": "RL & Agent Systems",
+          "entries": [
+            {
+              "entry": "orbit",
+              "bullets": [
+                "training-system",
+                "evaluation",
+                "results"
+              ],
+              "heading_variant": "multi-agent"
+            },
+            {
+              "entry": "openenv",
+              "bullets": [
+                "environment",
+                "benchmarks"
+              ]
+            },
+            {
+              "entry": "snake",
+              "bullets": [
+                "generalization"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "skills-heading",
+          "title": "Technical Skills",
+          "compact": true,
+          "block": "skills"
+        },
+        {
+          "id": "education-heading",
+          "title": "Education & Open Source",
+          "compact": true,
+          "block": "education"
+        },
+        {
+          "id": "other-heading",
+          "title": "Other Selected Projects",
+          "compact": true,
+          "project_links": [
+            "poker",
+            "jax"
+          ]
+        }
+      ]
+    ],
+    "pdf_filename": "Saheb-Motiani-ML-Engineer-CV.pdf",
+    "ml_skills_html": "<p><strong>ML and evaluation:</strong> Python, PyTorch, JAX, NumPy, Transformers, PEFT/LoRA, vLLM; PPO, GRPO, self-play, best-of-N/rejection sampling, LLM-as-judge, reward shaping and agent evaluation.</p>",
+    "label": "ML Engineer"
+  },
+  "swe": {
+    "filename": "cv-swe.html",
+    "title": "Saheb Motiani - Senior Software Engineer CV",
+    "description": "Production distributed systems, streaming pipelines and ML infrastructure, with over ten years of engineering experience at Meta, Babylon Health and Disney Streaming.",
+    "focus": "Distributed systems, streaming and ML infrastructure",
+    "summary": "Senior software engineer with 10+ years building production systems at Meta, Babylon Health and Disney Streaming. On an ML-focused career break since 2025, building LLM and RL training systems.",
+    "toolbar": "Senior Software Engineer CV – October 2026",
+    "label": "Software Engineer",
+    "pdf_filename": "Saheb-Motiani-Senior-Software-Engineer-CV.pdf",
+    "ml_skills_html": "<p><strong>ML systems:</strong> PyTorch, Transformers, PEFT/LoRA, vLLM; training and evaluation.</p>",
+    "pages": [
+      [
+        {
+          "id": "experience-heading",
+          "title": "Professional Experience",
+          "entries": [
+            {
+              "entry": "meta",
+              "bullets": [
+                "notifications",
+                "experiments",
+                "reliability"
+              ]
+            },
+            {
+              "entry": "babylon",
+              "bullets": [
+                "model-deployment",
+                "flink",
+                "team"
+              ],
+              "expanded_details": [
+                "deployment"
+              ]
+            },
+            {
+              "entry": "disney",
+              "bullets": [
+                "media-validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "earlier-heading",
+          "title": "Earlier Experience",
+          "block": "earlier-compact",
+          "compact": true
+        },
+        {
+          "id": "projects-heading",
+          "title": "Independent Engineering",
+          "context": "engineering",
+          "project_bullets": [
+            {
+              "entry": "tastebento",
+              "bullet": "engineering"
+            },
+            {
+              "entry": "orbit",
+              "bullet": "engineering"
+            },
+            {
+              "entry": "olmo",
+              "bullet": "engineering"
+            }
+          ]
+        },
+        {
+          "id": "skills-heading",
+          "title": "Technical Skills",
+          "compact": true,
+          "block": "skills",
+          "production_first": true
+        },
+        {
+          "id": "education-heading",
+          "title": "Education",
+          "compact": true,
+          "block": "education-compact"
+        }
+      ]
+    ],
+    "production_skills_html": "<p><strong>Production systems:</strong> Python, Scala, Java, SQL, Kafka, Flink, AWS, GCP, Kubernetes; distributed services, streaming pipelines and model deployment.</p>",
+    "print_class": "compact-print"
+  }
+}

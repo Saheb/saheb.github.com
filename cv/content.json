@@ -1,0 +1,218 @@
+{
+  "name": "Saheb Motiani",
+  "contact_html": "<p class=\"contact\">London, UK &middot; <a href=\"mailto:saheb210692@gmail.com\">saheb210692@gmail.com</a> &middot; <a href=\"https://saheb.github.io/research/\">Research</a> &middot; <a href=\"https://github.com/Saheb\">GitHub</a> &middot; <a href=\"https://linkedin.com/in/sahebmotiani\">LinkedIn</a></p>",
+  "contexts": {
+    "career": "Independent work during an ML-focused career break &middot; Aug 2025 &ndash; present",
+    "engineering": "ML-focused career break &middot; Aug 2025 &ndash; present"
+  },
+  "entries": {
+    "llama": {
+      "heading_html": "<h3>False self-correction in Llama-3.1-8B-Instruct</h3>",
+      "links_html": "<p class=\"entry-links\"><a href=\"https://saheb.github.io/research/llama-false-correction/\">Writeup</a> &middot; <a href=\"https://github.com/Saheb/llama31-8b-false-correction\">Code and experiments</a></p>",
+      "bullets": [
+        {
+          "id": "intervention",
+          "html": "Llama rejected correct arithmetic answers for some numbers (e.g. 100, 404) but not others. On <strong>22 cases</strong> where it rejected at baseline, three MLP activation edits cut rejection to <strong>3/22</strong>."
+        },
+        {
+          "id": "controls",
+          "html": "Tested the edits with held-out unit selection and random controls; reverse patches also made selected, previously non-rejecting prompts produce rejection language."
+        },
+        {
+          "id": "mechanism",
+          "html": "Tests of these two numbers suggested different early MLP components and a shared later influence on correctness judgments."
+        }
+      ]
+    },
+    "olmo": {
+      "heading_html": "<h3>RL fine-tuning OLMo to withhold prohibited exam help</h3>",
+      "links_html": "<p class=\"entry-links\"><a href=\"https://saheb.github.io/research/teaching-llm-to-not-help-cheat/\">Writeup</a> &middot; <a href=\"https://github.com/Saheb/rlft\">Code and experiments</a></p>",
+      "bullets": [
+        {
+          "id": "trainer",
+          "html": "Built a custom PyTorch/Transformers/PEFT GRPO trainer for OLMo-3-7B-Think-SFT with LoRA, vLLM rollouts and {{reward}}; compared final-answer and whole-completion loss over 12 updates and 864 rollouts per run.",
+          "details": {
+            "reward": {
+              "brief_html": "automated rewards",
+              "expanded_html": "binary LLM-judge rewards for policy compliance and answer correctness"
+            }
+          }
+        },
+        {
+          "id": "saved-likelihood",
+          "html": "Final-answer-only training increased rewarded answer tokens' relative likelihood in <strong>47/51</strong> eligible groups when saved reasoning was provided, yet fresh responses did not clearly improve."
+        },
+        {
+          "id": "fresh-behavior",
+          "html": "Whole-completion loss raised withholding from <strong>68/144 to 81/144</strong> fresh responses to seen prompts. Without policy text, it never refused prohibited help or asked permission (<strong>0/24 each</strong> on development prompts), so gains remained policy-dependent. One run per loss scope; automated judgments."
+        },
+        {
+          "id": "engineering",
+          "html": "Built an RL fine-tuning trainer with PyTorch, LoRA and vLLM batched generation."
+        }
+      ]
+    },
+    "meta": {
+      "heading_html": "<div class=\"job-header\"><h3>Senior Software Engineer &ndash; Meta</h3><span class=\"date\">Jan 2024 &ndash; May 2025</span></div>",
+      "links_html": "",
+      "bullets": [
+        {
+          "id": "notifications",
+          "html": "Built notifications prompting non-admin users at high-value advertisers to appeal mistaken ad-account enforcements, unblocking <strong>$6.6M/year</strong> in revenue."
+        },
+        {
+          "id": "experiments",
+          "html": "Ran experiments showing broader appeal notifications increased harm, as bad actors exploited gaps in the appeal process. Worked with data scientists and the abuse-prevention team to limit the rollout to high-value advertisers."
+        },
+        {
+          "id": "reliability",
+          "html": "Fixed a multi-recipient concurrency bug, reducing notification failure rates by <strong>70%</strong> for Facebook Pages, <strong>30%</strong> for ad accounts and <strong>8%</strong> for businesses; found the platform logging false-positive delivery successes."
+        }
+      ]
+    },
+    "babylon": {
+      "heading_html": "<div class=\"job-header\"><h3>Senior Software Engineer &ndash; Babylon Health</h3><span class=\"date\">Aug 2019 &ndash; Oct 2023</span></div>",
+      "links_html": "",
+      "bullets": [
+        {
+          "id": "model-deployment",
+          "html": "Designed {{deployment}} ML risk-prediction models, with outputs consumed by clinical portals and patient-outreach tools.",
+          "details": {
+            "deployment": {
+              "brief_html": "a Python/Faust pattern for deploying",
+              "expanded_html": "a deployment approach using Python stream-processing functions (Faust) for"
+            }
+          }
+        },
+        {
+          "id": "flink",
+          "html": "Built reusable Flink patterns for ETL, feature engineering and stream processing; the data platform team began rolling out Flink internally."
+        },
+        {
+          "id": "team",
+          "html": "Led an <strong>8&ndash;10-person cross-functional team</strong> delivering a health-scoring product with Applied Scientists; developed Scala services for health-assessment and symptom-checker chatbot workflows."
+        }
+      ]
+    },
+    "disney": {
+      "heading_html": "<div class=\"job-header\"><h3>Senior Software Engineer &ndash; Disney Streaming</h3><span class=\"date\">Aug 2017 &ndash; Jun 2019</span></div>",
+      "links_html": "",
+      "bullets": [
+        {
+          "id": "media-validation",
+          "html": "Designed distributed services to validate incoming media before transcoding and packaging, connecting on-premises infrastructure and AWS through asynchronous Kafka communication."
+        }
+      ]
+    },
+    "orbit": {
+      "heading_html": "<h3>Orbit Wars &ndash; self-play RL training and evaluation system</h3>",
+      "links_html": "<p class=\"entry-links\">Kaggle placement: 1,060 / 4,729 &middot; <a href=\"https://github.com/Saheb/kaggle-orbit-wars\">Code and results</a> &middot; <a href=\"https://saheb.github.io/blog/orbit-wars/replay-83428941.html\">Interactive replay</a></p>",
+      "bullets": [
+        {
+          "id": "training-system",
+          "html": "Built a GPU-vectorized PyTorch simulator, entity-transformer PPO policy, self-play league and standalone export; measured <strong>~4.1k end-to-end environment steps/s on RTX PRO 6000</strong>, including policy inference and PPO updates."
+        },
+        {
+          "id": "evaluation",
+          "html": "Diagnosed an evaluator that counted opponent crashes as wins; added fail-closed checks, built fixed, seat-balanced evaluation panels and checked train/export parity."
+        },
+        {
+          "id": "results",
+          "html": "A post-competition policy won <strong>98.0%</strong> against a mid-tier planner and <strong>14.1%</strong> against the 13th-ranked agent (256 games each), but <strong>0/32</strong> against a top-10 agent."
+        },
+        {
+          "id": "engineering",
+          "html": "Built a GPU-vectorized PyTorch simulator and RL training system (~4.1k end-to-end steps/s on RTX PRO 6000); caught an evaluator counting opponent crashes as wins and added safeguards."
+        }
+      ],
+      "heading_variants_html": {
+        "multi-agent": "<h3>Orbit Wars &ndash; multi-agent self-play RL system</h3>"
+      }
+    },
+    "snake": {
+      "heading_html": "<h3>Snake &ndash; board-size generalization</h3>",
+      "links_html": "<p class=\"entry-links\"><a href=\"https://github.com/Saheb/rl-snake/tree/main/size_transfer\">Study and code</a> &middot; <a href=\"https://saheb.github.io/rl-snake/\">Demo</a></p>",
+      "bullets": [
+        {
+          "id": "generalization",
+          "html": "An attention-pooling agent with egocentric inputs, trained on 10&times;10 and 20&times;20 boards, achieved <strong>97.7% moves toward food</strong> in zero-shot 100&times;100 play. Probes and training-size ablations pointed to training-state coverage as a bottleneck."
+        }
+      ]
+    },
+    "tastebento": {
+      "heading_html": "<h3>TasteBento &ndash; graded LLM generation in a live app</h3>",
+      "links_html": "<p class=\"entry-links\"><a href=\"https://tastebento.com\">Live app</a> &middot; Connects people through shared tastes in films, books, music and food</p>",
+      "bullets": [
+        {
+          "id": "graders",
+          "html": "Built hard checks for AI-generated facts and quizzes (format, grounding, non-triviality and quiz answers); an LLM judge with capped scoring weight reranked only candidates that passed."
+        },
+        {
+          "id": "selection",
+          "html": "Shipped parallel best-of-N generation with near-duplicate suppression; logged prompts, candidates and scores to support later post-training."
+        },
+        {
+          "id": "audit",
+          "html": "Audited 50 outputs from an earlier prompt: <strong>48 passed hard validation checks</strong>, but <strong>42 failed a soft specificity check</strong> for concrete details (dates, numbers or names). All <strong>10 user-flagged outputs</strong> passed the hard checks, showing the hard checks missed what users disliked."
+        },
+        {
+          "id": "engineering",
+          "html": "Develop and maintain a live social-discovery app based on users’ taste profiles (Next.js, Postgres/Supabase, Cloudflare), with parallel LLM generation, automated checks and reranking; implemented query parallelization and session-revocation checks for mutations."
+        }
+      ]
+    },
+    "openenv": {
+      "heading_html": "<h3>Content Moderation OpenEnv &ndash; multi-step agent environment</h3>",
+      "links_html": "<p class=\"entry-links\"><a href=\"https://github.com/Saheb/content-moderation-env\">Code and benchmark</a></p>",
+      "bullets": [
+        {
+          "id": "environment",
+          "html": "Built a deterministic OpenEnv moderation environment with four task packs and episodes up to <strong>150 steps</strong>; implemented thread-context and policy-lookup tools, typed actions and reward shaping."
+        },
+        {
+          "id": "benchmarks",
+          "html": "Benchmarked <strong>four hosted LLMs</strong> in one-shot and multi-step tool-using modes; reported task scores separately from accumulated reward because models with equal scores earned different rewards."
+        }
+      ]
+    }
+  },
+  "blocks": {
+    "earlier": {
+      "paragraphs_html": [
+        "<p><strong>Software Engineer &ndash; Cake Solutions (acquired by Disney)</strong><br><span class=\"date\">Nov 2016 &ndash; Aug 2017</span> &middot; Built media-acquisition control-plane automation for live ESPN+ and MLB.TV production.</p>",
+        "<p><strong>Senior Associate &ndash; Morgan Stanley</strong><br><span class=\"date\">Aug 2014 &ndash; Jul 2016</span> &middot; Built SMS messaging infrastructure with third-party provider integrations.</p>"
+      ],
+      "wrapper": "earlier"
+    },
+    "skills": {
+      "paragraphs_html": [
+        "<p><strong>Production systems:</strong> Scala, Java, SQL, Kafka, Flink, AWS, GCP, Kubernetes; distributed services, streaming pipelines and model deployment.</p>"
+      ]
+    },
+    "education": {
+      "paragraphs_html": [
+        "<p><strong>B.Tech., Information and Communication Technology</strong><br>Dhirubhai Ambani University (formerly DA-IICT) &middot; 2014</p>",
+        "<p><strong>Google Summer of Code (2013):</strong> ported the C++ Open Graph Drawing Framework to JavaScript with Emscripten.</p>"
+      ]
+    },
+    "earlier-compact": {
+      "paragraphs_html": [
+        "<p><strong>Software Engineer &ndash; Cake Solutions (acquired by Disney)</strong> &middot; Nov 2016 &ndash; Aug 2017<br>Built media-acquisition automation for live ESPN+ and MLB.TV production.</p>",
+        "<p><strong>Senior Associate &ndash; Morgan Stanley</strong> &middot; Aug 2014 &ndash; Jul 2016</p>"
+      ]
+    },
+    "education-compact": {
+      "paragraphs_html": [
+        "<p><strong>B.Tech., ICT</strong> &middot; Dhirubhai Ambani University (formerly DA-IICT) &middot; 2014</p>"
+      ]
+    }
+  },
+  "project_links": {
+    "tastebento": "<a href=\"https://tastebento.com\">TasteBento</a>",
+    "poker": "<a href=\"https://github.com/Saheb/rl-poker\">Poker RL</a>",
+    "openenv": "<a href=\"https://github.com/Saheb/content-moderation-env\">Content Moderation OpenEnv</a>",
+    "jax": "<a href=\"https://github.com/Saheb/tiny-transformer\">JAX Transformer</a>",
+    "orbit": "<a href=\"https://github.com/Saheb/kaggle-orbit-wars\">Orbit Wars</a>",
+    "olmo": "<a href=\"https://github.com/Saheb/rlft\">OLMo GRPO</a>"
+  }
+}

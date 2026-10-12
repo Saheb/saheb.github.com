@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saheb Motiani - Research Engineer CV</title>
+    <meta name="description" content="LLM interpretability, RL fine-tuning, and training and evaluation systems, backed by over ten years of production engineering.">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://saheb.github.io/cv-research.html">
+    <link rel="icon" href="/saheb-circle.png">
+    <style>
+        :root { color-scheme: light; --ink: #1d2935; --muted: #546271; --accent: #24564e; --line: #d9e1e4; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #eef1f3; color: var(--ink); font: 16px/1.48 Arial, Helvetica, sans-serif; }
+        a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+        .toolbar { max-width: 900px; margin: 20px auto 0; padding: 0 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+        .toolbar p { margin: 0; color: var(--muted); font-size: 14px; }
+        .cv-modes { display: flex; flex-basis: 100%; gap: 8px; }
+        .cv-modes a { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: white; color: var(--ink); font-size: 14px; line-height: 1.25; text-align: center; text-decoration: none; }
+        .cv-modes a:hover { border-color: var(--accent); }
+        .cv-modes a[aria-current="page"] { border-color: var(--accent); background: var(--accent); color: white; }
+        button { border: 0; border-radius: 4px; padding: 10px 15px; background: var(--accent); color: white; font: inherit; font-size: 14px; cursor: pointer; }
+        main { max-width: 900px; margin: 20px auto 36px; }
+        .cv-page { padding: 42px 48px; background: white; box-shadow: 0 2px 12px #1d293510; }
+        .cv-page + .cv-page { margin-top: 20px; }
+        h1 { margin: 0 0 5px; font-size: 34px; line-height: 1.15; letter-spacing: -.6px; }
+        .focus { margin: 0 0 10px; font-size: 16px; color: var(--accent); font-weight: 700; }
+        .contact { margin: 0; font-size: 14px; color: var(--muted); }
+        .contact a { white-space: nowrap; }
+        .summary { margin: 18px 0 0; }
+        section { margin-top: 24px; }
+        h2 { margin: 0 0 12px; padding-bottom: 5px; border-bottom: 1px solid var(--line); font-size: 17px; line-height: 1.25; color: var(--accent); }
+        .section-context { margin: -5px 0 13px; color: var(--muted); font-size: 13px; }
+        article + article { margin-top: 17px; }
+        h3 { margin: 0; font-size: 16px; line-height: 1.35; }
+        .entry-links { margin: 3px 0 6px; font-size: 13px; }
+        ul { margin: 6px 0 0; padding-left: 19px; }
+        li { margin-bottom: 6px; }
+        li:last-child { margin-bottom: 0; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+        .date { white-space: nowrap; color: var(--muted); font-size: 13px; }
+        .continuation { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 14px; }
+        .continuation span { color: var(--muted); font-size: 12px; }
+        .earlier { margin: 14px 0 0; }
+        .earlier p { margin: 8px 0 0; }
+        .compact p { margin: 6px 0 0; }
+        .page-number { display: none; }
+        @media screen and (max-width: 650px) {
+            .toolbar { margin-top: 14px; padding: 0 18px; flex-wrap: wrap; }
+            main { margin-top: 14px; }
+            .cv-page { padding: 28px 22px; }
+            h1 { font-size: 29px; }
+            .job-header { flex-direction: column; gap: 2px; }
+            .continuation { flex-wrap: wrap; gap: 4px; }
+            .contact { line-height: 1.8; }
+        }
+        @media print {
+            @page { size: A4; margin: 12mm 16mm; }
+            body { background: white; font-size: 10.3pt; line-height: 1.30; }
+            main { max-width: none; margin: 0; }
+            .toolbar { display: none; }
+            .cv-page { padding: 0; box-shadow: none; position: relative; min-height: 272mm; }
+            .cv-page + .cv-page { margin-top: 0; break-before: page; }
+            h1 { font-size: 25pt; margin-bottom: 3pt; }
+            .focus { font-size: 10.5pt; margin-bottom: 6pt; }
+            .contact { font-size: 9pt; }
+            .summary { margin-top: 10pt; }
+            section { margin-top: 10pt; }
+            h2 { font-size: 11.5pt; margin-bottom: 6pt; padding-bottom: 3pt; break-after: avoid; }
+            h3 { font-size: 10.5pt; break-after: avoid; }
+            .section-context { font-size: 9pt; margin: -2pt 0 8pt; }
+            .entry-links { font-size: 8.8pt; margin: 2pt 0 4pt; break-after: avoid; }
+            article { break-inside: avoid; }
+            article + article { margin-top: 7pt; }
+            ul { margin-top: 4pt; padding-left: 13pt; }
+            li { margin-bottom: 3pt; }
+            .date { font-size: 9pt; }
+            .job-header { break-after: avoid; }
+            .continuation { font-size: 10pt; padding-bottom: 7pt; }
+            .continuation span { font-size: 9pt; }
+            .earlier { margin-top: 9pt; }
+            .earlier p, .compact p { margin-top: 5pt; }
+            a { text-decoration-thickness: .5pt; }
+            .page-number { display: block; position: absolute; bottom: 0; right: 0; color: var(--muted); font-size: 8pt; margin: 0; }
+            .compact-print .summary { margin-top: 8pt; }
+            .compact-print section { margin-top: 6pt; }
+            .compact-print h2 { margin-bottom: 4pt; }
+            .compact-print article + article { margin-top: 5pt; }
+            .compact-print li { margin-bottom: 2pt; }
+            .compact-print li:last-child { margin-bottom: 0; }
+            .compact-print .section-context { margin-bottom: 6pt; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="">
+    <div class="toolbar">
+        <nav class="cv-modes" aria-label="CV version">
+            <a href="cv-research.html" aria-current="page">Research Engineer</a>
+            <a href="cv-mle.html">ML Engineer</a>
+            <a href="cv-swe.html">Software Engineer</a>
+        </nav>
+        <p><a href="./">Home</a> &middot; Research Engineer CV – October 2026</p>
+        <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+    <main>
+        <div class="cv-page">
+            <header>
+                <h1>Saheb Motiani</h1>
+                <p class="focus">LLM interpretability, RL fine-tuning and ML systems</p>
+                <p class="contact">London, UK &middot; <a href="mailto:saheb210692@gmail.com">saheb210692@gmail.com</a> &middot; <a href="https://saheb.github.io/research/">Research</a> &middot; <a href="https://github.com/Saheb">GitHub</a> &middot; <a href="https://linkedin.com/in/sahebmotiani">LinkedIn</a></p>
+                <p class="summary">Software engineer with 10+ years building production distributed systems at Meta, Babylon Health and Disney Streaming. I study LLM behavior with controlled experiments and build training and evaluation systems.</p>
+            </header>
+
+            <section aria-labelledby="research-heading">
+                <h2 id="research-heading">Selected Research</h2>
+                <p class="section-context">Independent work during an ML-focused career break &middot; Aug 2025 &ndash; present</p>
+                <article>
+                    <h3>False self-correction in Llama-3.1-8B-Instruct</h3>
+                    <p class="entry-links"><a href="https://saheb.github.io/research/llama-false-correction/">Writeup</a> &middot; <a href="https://github.com/Saheb/llama31-8b-false-correction">Code and experiments</a></p>
+                    <ul>
+                        <li>Llama rejected correct arithmetic answers for some numbers (e.g. 100, 404) but not others. On <strong>22 cases</strong> where it rejected at baseline, three MLP activation edits cut rejection to <strong>3/22</strong>.</li>
+                        <li>Tested the edits with held-out unit selection and random controls; reverse patches also made selected, previously non-rejecting prompts produce rejection language.</li>
+                        <li>Tests of these two numbers suggested different early MLP components and a shared later influence on correctness judgments.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>RL fine-tuning OLMo to withhold prohibited exam help</h3>
+                    <p class="entry-links"><a href="https://saheb.github.io/research/teaching-llm-to-not-help-cheat/">Writeup</a> &middot; <a href="https://github.com/Saheb/rlft">Code and experiments</a></p>
+                    <ul>
+                        <li>Built a custom PyTorch/Transformers/PEFT GRPO trainer for OLMo-3-7B-Think-SFT with LoRA, vLLM rollouts and automated rewards; compared final-answer and whole-completion loss over 12 updates and 864 rollouts per run.</li>
+                        <li>Final-answer-only training increased rewarded answer tokens' relative likelihood in <strong>47/51</strong> eligible groups when saved reasoning was provided, yet fresh responses did not clearly improve.</li>
+                        <li>Whole-completion loss raised withholding from <strong>68/144 to 81/144</strong> fresh responses to seen prompts. Without policy text, it never refused prohibited help or asked permission (<strong>0/24 each</strong> on development prompts), so gains remained policy-dependent. One run per loss scope; automated judgments.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section aria-labelledby="experience-heading">
+                <h2 id="experience-heading">Professional Experience</h2>
+                <article>
+                    <div class="job-header"><h3>Senior Software Engineer &ndash; Meta</h3><span class="date">Jan 2024 &ndash; May 2025</span></div>
+                    <ul>
+                        <li>Built notifications prompting non-admin users at high-value advertisers to appeal mistaken ad-account enforcements, unblocking <strong>$6.6M/year</strong> in revenue.</li>
+                        <li>Ran experiments showing broader appeal notifications increased harm, as bad actors exploited gaps in the appeal process. Worked with data scientists and the abuse-prevention team to limit the rollout to high-value advertisers.</li>
+                        <li>Fixed a multi-recipient concurrency bug, reducing notification failure rates by <strong>70%</strong> for Facebook Pages, <strong>30%</strong> for ad accounts and <strong>8%</strong> for businesses; found the platform logging false-positive delivery successes.</li>
+                    </ul>
+                </article>
+                <article>
+                    <div class="job-header"><h3>Senior Software Engineer &ndash; Babylon Health</h3><span class="date">Aug 2019 &ndash; Oct 2023</span></div>
+                    <ul>
+                        <li>Designed a Python/Faust pattern for deploying ML risk-prediction models, with outputs consumed by clinical portals and patient-outreach tools.</li>
+                        <li>Built reusable Flink patterns for ETL, feature engineering and stream processing; the data platform team began rolling out Flink internally.</li>
+                        <li>Led an <strong>8&ndash;10-person cross-functional team</strong> delivering a health-scoring product with Applied Scientists; developed Scala services for health-assessment and symptom-checker chatbot workflows.</li>
+                    </ul>
+                </article>
+                <article>
+                    <div class="job-header"><h3>Senior Software Engineer &ndash; Disney Streaming</h3><span class="date">Aug 2017 &ndash; Jun 2019</span></div>
+                    <ul>
+                        <li>Designed distributed services to validate incoming media before transcoding and packaging, connecting on-premises infrastructure and AWS through asynchronous Kafka communication.</li>
+                    </ul>
+                </article>
+            </section>
+            <p class="page-number" aria-hidden="true">1 / 2</p>
+        </div>
+
+        <div class="cv-page">
+            <div class="continuation"><strong>Saheb Motiani</strong><span>LLM interpretability, RL fine-tuning and ML systems</span></div>
+
+            <section aria-labelledby="earlier-heading">
+                <h2 id="earlier-heading">Earlier Experience</h2>
+                <div class="earlier">
+                    <p><strong>Software Engineer &ndash; Cake Solutions (acquired by Disney)</strong><br><span class="date">Nov 2016 &ndash; Aug 2017</span> &middot; Built media-acquisition control-plane automation for live ESPN+ and MLB.TV production.</p>
+                    <p><strong>Senior Associate &ndash; Morgan Stanley</strong><br><span class="date">Aug 2014 &ndash; Jul 2016</span> &middot; Built SMS messaging infrastructure with third-party provider integrations.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="systems-heading">
+                <h2 id="systems-heading">Selected ML Systems &amp; Experiments</h2>
+                <article>
+                    <h3>Orbit Wars &ndash; self-play RL training and evaluation system</h3>
+                    <p class="entry-links">Kaggle placement: 1,060 / 4,729 &middot; <a href="https://github.com/Saheb/kaggle-orbit-wars">Code and results</a> &middot; <a href="https://saheb.github.io/blog/orbit-wars/replay-83428941.html">Interactive replay</a></p>
+                    <ul>
+                        <li>Built a GPU-vectorized PyTorch simulator, entity-transformer PPO policy, self-play league and standalone export; measured <strong>~4.1k end-to-end environment steps/s on RTX PRO 6000</strong>, including policy inference and PPO updates.</li>
+                        <li>Diagnosed an evaluator that counted opponent crashes as wins; added fail-closed checks, built fixed, seat-balanced evaluation panels and checked train/export parity.</li>
+                        <li>A post-competition policy won <strong>98.0%</strong> against a mid-tier planner and <strong>14.1%</strong> against the 13th-ranked agent (256 games each), but <strong>0/32</strong> against a top-10 agent.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Snake &ndash; board-size generalization</h3>
+                    <p class="entry-links"><a href="https://github.com/Saheb/rl-snake/tree/main/size_transfer">Study and code</a> &middot; <a href="https://saheb.github.io/rl-snake/">Demo</a></p>
+                    <ul>
+                        <li>An attention-pooling agent with egocentric inputs, trained on 10&times;10 and 20&times;20 boards, achieved <strong>97.7% moves toward food</strong> in zero-shot 100&times;100 play. Probes and training-size ablations pointed to training-state coverage as a bottleneck.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section class="compact" aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Technical Skills</h2>
+                <p><strong>ML and experiments:</strong> Python, PyTorch, JAX, NumPy, Transformers, PEFT/LoRA, vLLM; PPO, GRPO, self-play, activation patching, probing and controlled evaluation.</p>
+                <p><strong>Production systems:</strong> Scala, Java, SQL, Kafka, Flink, AWS, GCP, Kubernetes; distributed services, streaming pipelines and model deployment.</p>
+            </section>
+
+            <section class="compact" aria-labelledby="education-heading">
+                <h2 id="education-heading">Education &amp; Open Source</h2>
+                <p><strong>B.Tech., Information and Communication Technology</strong><br>Dhirubhai Ambani University (formerly DA-IICT) &middot; 2014</p>
+                <p><strong>Google Summer of Code (2013):</strong> ported the C++ Open Graph Drawing Framework to JavaScript with Emscripten.</p>
+            </section>
+
+            <section class="compact" aria-labelledby="other-heading">
+                <h2 id="other-heading">Other Selected Projects</h2>
+                <p><a href="https://tastebento.com">TasteBento</a> &middot; <a href="https://github.com/Saheb/rl-poker">Poker RL</a> &middot; <a href="https://github.com/Saheb/content-moderation-env">Content Moderation OpenEnv</a> &middot; <a href="https://github.com/Saheb/tiny-transformer">JAX Transformer</a></p>
+            </section>
+            <p class="page-number" aria-hidden="true">2 / 2</p>
+        </div>
+    </main>
+</body>
+</html>

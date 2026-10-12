@@ -31,6 +31,7 @@ jobs:
 
       - name: Build deploy directory
         run: |
+          python3 scripts/build-cvs.py
           mkdir -p deploy
           # Copy all static files from root (excluding git, hugo, and deploy itself)
           for f in *; do

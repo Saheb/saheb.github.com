@@ -12,6 +12,9 @@ if [[ "$BUILD_DIR" != "$SITE_ROOT/_site" ]]; then
     exit 1
 fi
 
+# Keep all CV versions in sync with their shared claims before copying pages.
+python3 "$SITE_ROOT/scripts/build-cvs.py"
+
 # Build from checked-in files, matching what exists in a clean GitHub Actions
 # checkout. This deliberately avoids publishing unrelated untracked files that
 # happen to live beside the site locally.
