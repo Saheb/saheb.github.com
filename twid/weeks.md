@@ -5,6 +5,12 @@
 - ...
 -->
 
+## Week of 2026-10-12
+- Gave an initial call interview with Monzo. This time I prepared in detail about my Babylon Health experience and did interview-style conversations with LLMs. Also taught my mother to do the same, to improve her articulation and draft a book review of Shantaram
+- Monzo work exercise: a web crawler, which I wrote from scratch. Learned about Python coroutines, the asyncio library and the GIL
+- Did an AI-assisted online screen for Deliveroo. The knowledge questions were fine, but the other parts felt like they were testing ChatGPT and not me; I just had to prompt it to get the job done. Have another one next week, a one-hour codecraft round, where I'll use Claude/Codex on my local machine
+- Recruiters from Extrac AI and Faculty reached out about MLE roles
+
 ## Week of 2026-10-05
 - Gave two interviews with Wayve and learned about my weaknesses. Time complexity has always been my weakness, so why don't I prepare more for it? Instead of covering breadth and thinking about their domain problems, I should've focused more on the gaps in my fundamentals
 - Having tanked the interviews, the weekend trip to Ooty went really well. Wonderful view, serene walks. As planned: relaxing, a karaoke room and just us. I learned horse riding, caught a fish and then threw it back in. Drank a full bottle of Sula white wine
