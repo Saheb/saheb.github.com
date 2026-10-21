@@ -6,7 +6,7 @@ and order. Method details and alternate project titles remain in the shared cont
 profiles select expanded details when relevant.
 `template.html` contains the shared HTML and print styles.
 
-`cv.html` defaults to the Research Engineer profile. All CV pages have a mode
+`cv.html` defaults to the ML Engineer profile. All CV pages have a mode
 selector linking to `cv-research.html`, `cv-mle.html` and `cv-swe.html`; these URLs
 work without JavaScript. The selector is hidden when printing.
 

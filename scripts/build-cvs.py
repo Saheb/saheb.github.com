@@ -128,7 +128,7 @@ def main():
         filename = profile["filename"]
         (ROOT / filename).write_text(render_profile(profile, content, template, profiles, key))
         print(f"Built {filename}")
-    (ROOT / "cv.html").write_text(render_profile(profiles["research"], content, template, profiles, "research", index=True))
+    (ROOT / "cv.html").write_text(render_profile(profiles["mle"], content, template, profiles, "mle", index=True))
     print("Built cv.html")
 
 
