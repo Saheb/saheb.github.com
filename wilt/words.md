@@ -5,6 +5,9 @@
 Meaning. Where I found it / example sentence.
 -->
 
+## Affine transformation
+A linear transformation followed by a shift: f(x) = Ax + b. It keeps straight lines straight and parallel lines parallel, but can move the origin and change lengths and angles. A neural-network layer before its activation is one.
+
 ## Straggler problem
 In synchronous distributed work, every step waits for the slowest worker, so one slow GPU, node or data loader sets the pace and drags down utilization across the whole job.
 
